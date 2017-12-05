@@ -1,0 +1,566 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A4D6C7C21FD67C9D0066251F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C7C11FD67C9D0066251F /* main.m */; };
+		A4D6C7C51FD67C9D0066251F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C7C41FD67C9D0066251F /* AppDelegate.m */; };
+		A4D6C7C81FD67C9D0066251F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C7C71FD67C9D0066251F /* ViewController.m */; };
+		A4D6C7CB1FD67C9D0066251F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D6C7C91FD67C9D0066251F /* Main.storyboard */; };
+		A4D6C7CD1FD67C9D0066251F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D6C7CC1FD67C9D0066251F /* Assets.xcassets */; };
+		A4D6C7D01FD67C9E0066251F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D6C7CE1FD67C9E0066251F /* LaunchScreen.storyboard */; };
+		A4D6C7DB1FD67C9E0066251F /* FieldShopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C7DA1FD67C9E0066251F /* FieldShopTests.m */; };
+		A4D6C7E61FD67C9E0066251F /* FieldShopUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C7E51FD67C9E0066251F /* FieldShopUITests.m */; };
+		A4D6C7F51FD67D3A0066251F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D6C7F41FD67D3A0066251F /* CoreData.framework */; };
+		A4D6C7F91FD67FD30066251F /* FSCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C7F81FD67FD30066251F /* FSCoreDataHelper.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A4D6C7D71FD67C9E0066251F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4D6C7B51FD67C9D0066251F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4D6C7BC1FD67C9D0066251F;
+			remoteInfo = FieldShop;
+		};
+		A4D6C7E21FD67C9E0066251F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4D6C7B51FD67C9D0066251F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4D6C7BC1FD67C9D0066251F;
+			remoteInfo = FieldShop;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A4D6C7BD1FD67C9D0066251F /* FieldShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FieldShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4D6C7C11FD67C9D0066251F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A4D6C7C31FD67C9D0066251F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A4D6C7C41FD67C9D0066251F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A4D6C7C61FD67C9D0066251F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A4D6C7C71FD67C9D0066251F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A4D6C7CA1FD67C9D0066251F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A4D6C7CC1FD67C9D0066251F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A4D6C7CF1FD67C9E0066251F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A4D6C7D11FD67C9E0066251F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4D6C7D61FD67C9E0066251F /* FieldShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FieldShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4D6C7DA1FD67C9E0066251F /* FieldShopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FieldShopTests.m; sourceTree = "<group>"; };
+		A4D6C7DC1FD67C9E0066251F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4D6C7E11FD67C9E0066251F /* FieldShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FieldShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4D6C7E51FD67C9E0066251F /* FieldShopUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FieldShopUITests.m; sourceTree = "<group>"; };
+		A4D6C7E71FD67C9E0066251F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4D6C7F41FD67D3A0066251F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A4D6C7F71FD67FD30066251F /* FSCoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSCoreDataHelper.h; path = CoreData/FSCoreDataHelper.h; sourceTree = "<group>"; };
+		A4D6C7F81FD67FD30066251F /* FSCoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSCoreDataHelper.m; path = CoreData/FSCoreDataHelper.m; sourceTree = "<group>"; };
+		A4D6C8021FD687DC0066251F /* FieldShop-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FieldShop-Prefix.pch"; sourceTree = "<group>"; };
+		A4D6C8031FD68A7D0066251F /* FSCommonDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSCommonDefine.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A4D6C7BA1FD67C9D0066251F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4D6C7F51FD67D3A0066251F /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4D6C7D31FD67C9E0066251F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4D6C7DE1FD67C9E0066251F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A4D6C7B41FD67C9D0066251F = {
+			isa = PBXGroup;
+			children = (
+				A4D6C7BF1FD67C9D0066251F /* FieldShop */,
+				A4D6C7D91FD67C9E0066251F /* FieldShopTests */,
+				A4D6C7E41FD67C9E0066251F /* FieldShopUITests */,
+				A4D6C7BE1FD67C9D0066251F /* Products */,
+				A4D6C7F31FD67D3A0066251F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A4D6C7BE1FD67C9D0066251F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A4D6C7BD1FD67C9D0066251F /* FieldShop.app */,
+				A4D6C7D61FD67C9E0066251F /* FieldShopTests.xctest */,
+				A4D6C7E11FD67C9E0066251F /* FieldShopUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A4D6C7BF1FD67C9D0066251F /* FieldShop */ = {
+			isa = PBXGroup;
+			children = (
+				A4D6C8031FD68A7D0066251F /* FSCommonDefine.h */,
+				A4D6C7F61FD67EEE0066251F /* CoreData */,
+				A4D6C7C31FD67C9D0066251F /* AppDelegate.h */,
+				A4D6C7C41FD67C9D0066251F /* AppDelegate.m */,
+				A4D6C7C61FD67C9D0066251F /* ViewController.h */,
+				A4D6C7C71FD67C9D0066251F /* ViewController.m */,
+				A4D6C7C91FD67C9D0066251F /* Main.storyboard */,
+				A4D6C7CC1FD67C9D0066251F /* Assets.xcassets */,
+				A4D6C7CE1FD67C9E0066251F /* LaunchScreen.storyboard */,
+				A4D6C7D11FD67C9E0066251F /* Info.plist */,
+				A4D6C7C01FD67C9D0066251F /* Supporting Files */,
+			);
+			path = FieldShop;
+			sourceTree = "<group>";
+		};
+		A4D6C7C01FD67C9D0066251F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A4D6C8021FD687DC0066251F /* FieldShop-Prefix.pch */,
+				A4D6C7C11FD67C9D0066251F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4D6C7D91FD67C9E0066251F /* FieldShopTests */ = {
+			isa = PBXGroup;
+			children = (
+				A4D6C7DA1FD67C9E0066251F /* FieldShopTests.m */,
+				A4D6C7DC1FD67C9E0066251F /* Info.plist */,
+			);
+			path = FieldShopTests;
+			sourceTree = "<group>";
+		};
+		A4D6C7E41FD67C9E0066251F /* FieldShopUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A4D6C7E51FD67C9E0066251F /* FieldShopUITests.m */,
+				A4D6C7E71FD67C9E0066251F /* Info.plist */,
+			);
+			path = FieldShopUITests;
+			sourceTree = "<group>";
+		};
+		A4D6C7F31FD67D3A0066251F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4D6C7F41FD67D3A0066251F /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A4D6C7F61FD67EEE0066251F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A4D6C7F71FD67FD30066251F /* FSCoreDataHelper.h */,
+				A4D6C7F81FD67FD30066251F /* FSCoreDataHelper.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A4D6C7BC1FD67C9D0066251F /* FieldShop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4D6C7EA1FD67C9E0066251F /* Build configuration list for PBXNativeTarget "FieldShop" */;
+			buildPhases = (
+				A4D6C7B91FD67C9D0066251F /* Sources */,
+				A4D6C7BA1FD67C9D0066251F /* Frameworks */,
+				A4D6C7BB1FD67C9D0066251F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FieldShop;
+			productName = FieldShop;
+			productReference = A4D6C7BD1FD67C9D0066251F /* FieldShop.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A4D6C7D51FD67C9E0066251F /* FieldShopTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4D6C7ED1FD67C9E0066251F /* Build configuration list for PBXNativeTarget "FieldShopTests" */;
+			buildPhases = (
+				A4D6C7D21FD67C9E0066251F /* Sources */,
+				A4D6C7D31FD67C9E0066251F /* Frameworks */,
+				A4D6C7D41FD67C9E0066251F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A4D6C7D81FD67C9E0066251F /* PBXTargetDependency */,
+			);
+			name = FieldShopTests;
+			productName = FieldShopTests;
+			productReference = A4D6C7D61FD67C9E0066251F /* FieldShopTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A4D6C7E01FD67C9E0066251F /* FieldShopUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4D6C7F01FD67C9E0066251F /* Build configuration list for PBXNativeTarget "FieldShopUITests" */;
+			buildPhases = (
+				A4D6C7DD1FD67C9E0066251F /* Sources */,
+				A4D6C7DE1FD67C9E0066251F /* Frameworks */,
+				A4D6C7DF1FD67C9E0066251F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A4D6C7E31FD67C9E0066251F /* PBXTargetDependency */,
+			);
+			name = FieldShopUITests;
+			productName = FieldShopUITests;
+			productReference = A4D6C7E11FD67C9E0066251F /* FieldShopUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A4D6C7B51FD67C9D0066251F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = dongchx;
+				TargetAttributes = {
+					A4D6C7BC1FD67C9D0066251F = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					A4D6C7D51FD67C9E0066251F = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A4D6C7BC1FD67C9D0066251F;
+					};
+					A4D6C7E01FD67C9E0066251F = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A4D6C7BC1FD67C9D0066251F;
+					};
+				};
+			};
+			buildConfigurationList = A4D6C7B81FD67C9D0066251F /* Build configuration list for PBXProject "FieldShop" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A4D6C7B41FD67C9D0066251F;
+			productRefGroup = A4D6C7BE1FD67C9D0066251F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A4D6C7BC1FD67C9D0066251F /* FieldShop */,
+				A4D6C7D51FD67C9E0066251F /* FieldShopTests */,
+				A4D6C7E01FD67C9E0066251F /* FieldShopUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A4D6C7BB1FD67C9D0066251F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4D6C7D01FD67C9E0066251F /* LaunchScreen.storyboard in Resources */,
+				A4D6C7CD1FD67C9D0066251F /* Assets.xcassets in Resources */,
+				A4D6C7CB1FD67C9D0066251F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4D6C7D41FD67C9E0066251F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4D6C7DF1FD67C9E0066251F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A4D6C7B91FD67C9D0066251F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4D6C7C81FD67C9D0066251F /* ViewController.m in Sources */,
+				A4D6C7F91FD67FD30066251F /* FSCoreDataHelper.m in Sources */,
+				A4D6C7C51FD67C9D0066251F /* AppDelegate.m in Sources */,
+				A4D6C7C21FD67C9D0066251F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4D6C7D21FD67C9E0066251F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4D6C7DB1FD67C9E0066251F /* FieldShopTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4D6C7DD1FD67C9E0066251F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4D6C7E61FD67C9E0066251F /* FieldShopUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A4D6C7D81FD67C9E0066251F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4D6C7BC1FD67C9D0066251F /* FieldShop */;
+			targetProxy = A4D6C7D71FD67C9E0066251F /* PBXContainerItemProxy */;
+		};
+		A4D6C7E31FD67C9E0066251F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4D6C7BC1FD67C9D0066251F /* FieldShop */;
+			targetProxy = A4D6C7E21FD67C9E0066251F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A4D6C7C91FD67C9D0066251F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4D6C7CA1FD67C9D0066251F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A4D6C7CE1FD67C9E0066251F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4D6C7CF1FD67C9E0066251F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A4D6C7E81FD67C9E0066251F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A4D6C7E91FD67C9E0066251F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A4D6C7EB1FD67C9E0066251F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/FieldShop/FieldShop-prefix.pch";
+				INFOPLIST_FILE = FieldShop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dongchx.FieldShop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A4D6C7EC1FD67C9E0066251F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/FieldShop/FieldShop-prefix.pch";
+				INFOPLIST_FILE = FieldShop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dongchx.FieldShop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A4D6C7EE1FD67C9E0066251F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FieldShopTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dongchx.FieldShopTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FieldShop.app/FieldShop";
+			};
+			name = Debug;
+		};
+		A4D6C7EF1FD67C9E0066251F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FieldShopTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dongchx.FieldShopTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FieldShop.app/FieldShop";
+			};
+			name = Release;
+		};
+		A4D6C7F11FD67C9E0066251F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FieldShopUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dongchx.FieldShopUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FieldShop;
+			};
+			name = Debug;
+		};
+		A4D6C7F21FD67C9E0066251F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FieldShopUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dongchx.FieldShopUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FieldShop;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A4D6C7B81FD67C9D0066251F /* Build configuration list for PBXProject "FieldShop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4D6C7E81FD67C9E0066251F /* Debug */,
+				A4D6C7E91FD67C9E0066251F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4D6C7EA1FD67C9E0066251F /* Build configuration list for PBXNativeTarget "FieldShop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4D6C7EB1FD67C9E0066251F /* Debug */,
+				A4D6C7EC1FD67C9E0066251F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A4D6C7ED1FD67C9E0066251F /* Build configuration list for PBXNativeTarget "FieldShopTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4D6C7EE1FD67C9E0066251F /* Debug */,
+				A4D6C7EF1FD67C9E0066251F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A4D6C7F01FD67C9E0066251F /* Build configuration list for PBXNativeTarget "FieldShopUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4D6C7F11FD67C9E0066251F /* Debug */,
+				A4D6C7F21FD67C9E0066251F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A4D6C7B51FD67C9D0066251F /* Project object */;
+}
