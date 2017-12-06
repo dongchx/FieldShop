@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "FSRootViewController.h"
+#import "Item+CoreDataProperties.h"
 
 @interface AppDelegate ()
 
@@ -14,10 +16,64 @@
 
 @implementation AppDelegate
 
+- (void)demo
+{
+    FSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    
+    // 创建托管对象
+//    NSArray *newItemNames =
+//    @[@"Apples", @"Milk", @"Bread", @"Cheese", @"Sausages", @"Butter",
+//      @"Orange Juice", @"Cereal", @"Coffee", @"Eggs", @"Tomatoes", @"Fish"];
+//    
+//    for (NSString *newItemName in newItemNames) {
+//        Item *newItem =
+//        [NSEntityDescription insertNewObjectForEntityForName:@"Item"
+//                                      inManagedObjectContext:self.cdh.context];
+//
+//        newItem.name = newItemName;
+//        
+//        FSLog(@"Inserted New Managed object for '%@'", newItem.name);
+//    }
+    
+    /* 获取托管对象 */
+    NSFetchRequest *request =
+    [NSFetchRequest fetchRequestWithEntityName:@"Item"];
+    
+    // 排序描述符
+    NSSortDescriptor *sort =
+    [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    request.sortDescriptors = @[sort,];
+    
+    // 获取请求模板
+//    NSFetchRequest *request =
+//    [[self.cdh.model fetchRequestTemplateForName:@"Test"] copy];
+    
+    // 筛选
+    NSPredicate *filter =
+    [NSPredicate predicateWithFormat:@"name != %@", @"Coffee"];
+    request.predicate = filter;
+    
+    NSArray *fetchedObjects =
+    [self.cdh.context executeFetchRequest:request error:nil];
+    
+    for (Item *item in fetchedObjects) {
+        FSLog(@"Fetched Object = %@", item.name);
+        
+        // 删除托管对象
+//        [self.cdh.context deleteObject:item];
+    }
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    FSRootViewController *rootVC = [[FSRootViewController alloc] init];
+    UINavigationController *navi =
+    [[UINavigationController alloc] initWithRootViewController:rootVC];
+    
+    self.window.rootViewController = navi;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
@@ -43,7 +99,10 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    FSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    
+    [self cdh];
+    [self demo];
 }
 
 

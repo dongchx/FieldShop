@@ -9,14 +9,15 @@
 /* Begin PBXBuildFile section */
 		A4D6C7C21FD67C9D0066251F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C7C11FD67C9D0066251F /* main.m */; };
 		A4D6C7C51FD67C9D0066251F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C7C41FD67C9D0066251F /* AppDelegate.m */; };
-		A4D6C7C81FD67C9D0066251F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C7C71FD67C9D0066251F /* ViewController.m */; };
-		A4D6C7CB1FD67C9D0066251F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D6C7C91FD67C9D0066251F /* Main.storyboard */; };
 		A4D6C7CD1FD67C9D0066251F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D6C7CC1FD67C9D0066251F /* Assets.xcassets */; };
-		A4D6C7D01FD67C9E0066251F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D6C7CE1FD67C9E0066251F /* LaunchScreen.storyboard */; };
 		A4D6C7DB1FD67C9E0066251F /* FieldShopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C7DA1FD67C9E0066251F /* FieldShopTests.m */; };
 		A4D6C7E61FD67C9E0066251F /* FieldShopUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C7E51FD67C9E0066251F /* FieldShopUITests.m */; };
 		A4D6C7F51FD67D3A0066251F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D6C7F41FD67D3A0066251F /* CoreData.framework */; };
 		A4D6C7F91FD67FD30066251F /* FSCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C7F81FD67FD30066251F /* FSCoreDataHelper.m */; };
+		A4D6C80A1FD7D06C0066251F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C8081FD7D06C0066251F /* Model.xcdatamodeld */; };
+		A4D6C8331FD7F5220066251F /* Item+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C8301FD7F5220066251F /* Item+CoreDataClass.m */; };
+		A4D6C8341FD7F5220066251F /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C8321FD7F5220066251F /* Item+CoreDataProperties.m */; };
+		A4D6C8391FD7F5E80066251F /* FSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C8381FD7F5E80066251F /* FSRootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,11 +42,7 @@
 		A4D6C7C11FD67C9D0066251F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A4D6C7C31FD67C9D0066251F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A4D6C7C41FD67C9D0066251F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A4D6C7C61FD67C9D0066251F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A4D6C7C71FD67C9D0066251F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A4D6C7CA1FD67C9D0066251F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4D6C7CC1FD67C9D0066251F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A4D6C7CF1FD67C9E0066251F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4D6C7D11FD67C9E0066251F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4D6C7D61FD67C9E0066251F /* FieldShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FieldShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D6C7DA1FD67C9E0066251F /* FieldShopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FieldShopTests.m; sourceTree = "<group>"; };
@@ -58,6 +55,14 @@
 		A4D6C7F81FD67FD30066251F /* FSCoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSCoreDataHelper.m; path = CoreData/FSCoreDataHelper.m; sourceTree = "<group>"; };
 		A4D6C8021FD687DC0066251F /* FieldShop-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FieldShop-Prefix.pch"; sourceTree = "<group>"; };
 		A4D6C8031FD68A7D0066251F /* FSCommonDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSCommonDefine.h; sourceTree = "<group>"; };
+		A4D6C8091FD7D06C0066251F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		A4D6C82A1FD7EF8E0066251F /* FieldShop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FieldShop-Bridging-Header.h"; sourceTree = "<group>"; };
+		A4D6C82F1FD7F5220066251F /* Item+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Item+CoreDataClass.h"; path = "DataModel/ModelClass/Item+CoreDataClass.h"; sourceTree = "<group>"; };
+		A4D6C8301FD7F5220066251F /* Item+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Item+CoreDataClass.m"; path = "DataModel/ModelClass/Item+CoreDataClass.m"; sourceTree = "<group>"; };
+		A4D6C8311FD7F5220066251F /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Item+CoreDataProperties.h"; path = "DataModel/ModelClass/Item+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A4D6C8321FD7F5220066251F /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Item+CoreDataProperties.m"; path = "DataModel/ModelClass/Item+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A4D6C8371FD7F5E80066251F /* FSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSRootViewController.h; path = Business/MainView/FSRootViewController.h; sourceTree = "<group>"; };
+		A4D6C8381FD7F5E80066251F /* FSRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSRootViewController.m; path = Business/MainView/FSRootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +99,7 @@
 				A4D6C7E41FD67C9E0066251F /* FieldShopUITests */,
 				A4D6C7BE1FD67C9D0066251F /* Products */,
 				A4D6C7F31FD67D3A0066251F /* Frameworks */,
+				A4D6C82A1FD7EF8E0066251F /* FieldShop-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,16 +116,12 @@
 		A4D6C7BF1FD67C9D0066251F /* FieldShop */ = {
 			isa = PBXGroup;
 			children = (
-				A4D6C8031FD68A7D0066251F /* FSCommonDefine.h */,
+				A4D6C8351FD7F5660066251F /* Business */,
+				A4D6C8041FD793EF0066251F /* DataModel */,
 				A4D6C7F61FD67EEE0066251F /* CoreData */,
 				A4D6C7C31FD67C9D0066251F /* AppDelegate.h */,
 				A4D6C7C41FD67C9D0066251F /* AppDelegate.m */,
-				A4D6C7C61FD67C9D0066251F /* ViewController.h */,
-				A4D6C7C71FD67C9D0066251F /* ViewController.m */,
-				A4D6C7C91FD67C9D0066251F /* Main.storyboard */,
-				A4D6C7CC1FD67C9D0066251F /* Assets.xcassets */,
-				A4D6C7CE1FD67C9E0066251F /* LaunchScreen.storyboard */,
-				A4D6C7D11FD67C9E0066251F /* Info.plist */,
+				A4D6C8031FD68A7D0066251F /* FSCommonDefine.h */,
 				A4D6C7C01FD67C9D0066251F /* Supporting Files */,
 			);
 			path = FieldShop;
@@ -128,8 +130,10 @@
 		A4D6C7C01FD67C9D0066251F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A4D6C8021FD687DC0066251F /* FieldShop-Prefix.pch */,
+				A4D6C7CC1FD67C9D0066251F /* Assets.xcassets */,
+				A4D6C7D11FD67C9E0066251F /* Info.plist */,
 				A4D6C7C11FD67C9D0066251F /* main.m */,
+				A4D6C8021FD687DC0066251F /* FieldShop-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -167,6 +171,43 @@
 				A4D6C7F81FD67FD30066251F /* FSCoreDataHelper.m */,
 			);
 			name = CoreData;
+			sourceTree = "<group>";
+		};
+		A4D6C8041FD793EF0066251F /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				A4D6C80B1FD7D9000066251F /* ModelClass */,
+				A4D6C8081FD7D06C0066251F /* Model.xcdatamodeld */,
+			);
+			name = DataModel;
+			sourceTree = "<group>";
+		};
+		A4D6C80B1FD7D9000066251F /* ModelClass */ = {
+			isa = PBXGroup;
+			children = (
+				A4D6C82F1FD7F5220066251F /* Item+CoreDataClass.h */,
+				A4D6C8301FD7F5220066251F /* Item+CoreDataClass.m */,
+				A4D6C8311FD7F5220066251F /* Item+CoreDataProperties.h */,
+				A4D6C8321FD7F5220066251F /* Item+CoreDataProperties.m */,
+			);
+			name = ModelClass;
+			sourceTree = "<group>";
+		};
+		A4D6C8351FD7F5660066251F /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				A4D6C8361FD7F58B0066251F /* MainView */,
+			);
+			name = Business;
+			sourceTree = "<group>";
+		};
+		A4D6C8361FD7F58B0066251F /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				A4D6C8371FD7F5E80066251F /* FSRootViewController.h */,
+				A4D6C8381FD7F5E80066251F /* FSRootViewController.m */,
+			);
+			name = MainView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +277,7 @@
 				TargetAttributes = {
 					A4D6C7BC1FD67C9D0066251F = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					A4D6C7D51FD67C9E0066251F = {
@@ -275,9 +317,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4D6C7D01FD67C9E0066251F /* LaunchScreen.storyboard in Resources */,
 				A4D6C7CD1FD67C9D0066251F /* Assets.xcassets in Resources */,
-				A4D6C7CB1FD67C9D0066251F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,10 +342,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4D6C7C81FD67C9D0066251F /* ViewController.m in Sources */,
+				A4D6C8341FD7F5220066251F /* Item+CoreDataProperties.m in Sources */,
+				A4D6C8331FD7F5220066251F /* Item+CoreDataClass.m in Sources */,
+				A4D6C8391FD7F5E80066251F /* FSRootViewController.m in Sources */,
 				A4D6C7F91FD67FD30066251F /* FSCoreDataHelper.m in Sources */,
 				A4D6C7C51FD67C9D0066251F /* AppDelegate.m in Sources */,
 				A4D6C7C21FD67C9D0066251F /* main.m in Sources */,
+				A4D6C80A1FD7D06C0066251F /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,25 +383,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		A4D6C7C91FD67C9D0066251F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A4D6C7CA1FD67C9D0066251F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A4D6C7CE1FD67C9E0066251F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A4D6C7CF1FD67C9E0066251F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		A4D6C7E81FD67C9E0066251F /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -391,6 +415,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/FieldShop/FieldShop-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -401,7 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -438,13 +464,15 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/FieldShop/FieldShop-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -456,12 +484,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/FieldShop/FieldShop-prefix.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/FieldShop/FieldShop-Prefix.pch";
 				INFOPLIST_FILE = FieldShop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dongchx.FieldShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FieldShop-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -469,12 +501,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/FieldShop/FieldShop-prefix.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/FieldShop/FieldShop-Prefix.pch";
 				INFOPLIST_FILE = FieldShop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dongchx.FieldShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FieldShop-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -534,7 +569,7 @@
 				A4D6C7E91FD67C9E0066251F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		A4D6C7EA1FD67C9E0066251F /* Build configuration list for PBXNativeTarget "FieldShop" */ = {
 			isa = XCConfigurationList;
@@ -543,6 +578,7 @@
 				A4D6C7EC1FD67C9E0066251F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 		A4D6C7ED1FD67C9E0066251F /* Build configuration list for PBXNativeTarget "FieldShopTests" */ = {
 			isa = XCConfigurationList;
@@ -551,6 +587,7 @@
 				A4D6C7EF1FD67C9E0066251F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 		A4D6C7F01FD67C9E0066251F /* Build configuration list for PBXNativeTarget "FieldShopUITests" */ = {
 			isa = XCConfigurationList;
@@ -559,8 +596,23 @@
 				A4D6C7F21FD67C9E0066251F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A4D6C8081FD7D06C0066251F /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A4D6C8091FD7D06C0066251F /* Model.xcdatamodel */,
+			);
+			currentVersion = A4D6C8091FD7D06C0066251F /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = DataModel/Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A4D6C7B51FD67C9D0066251F /* Project object */;
 }
