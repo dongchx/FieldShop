@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "FSRootViewController.h"
 #import "Item+CoreDataProperties.h"
+#import "Measurement+CoreDataProperties.h"
+#import "Amount+CoreDataProperties.h"
+#import "Unit+CoreDataProperties.h"
 
 @interface AppDelegate ()
 
@@ -35,32 +38,52 @@
 //        FSLog(@"Inserted New Managed object for '%@'", newItem.name);
 //    }
     
+    // 插入测试数据
+//    for (int i = 1; i < 50000; i++) {
+//        Measurement *newMeasurement =
+//        [NSEntityDescription insertNewObjectForEntityForName:@"Measurement"
+//                                      inManagedObjectContext:self.cdh.context];
+//        newMeasurement.abc =
+//        [NSString stringWithFormat:@"-->> LOTS OF TEST DATA x%i", i];
+//        
+//        FSLog(@"Inserted %@", newMeasurement.abc);
+//        
+//        [self.cdh saveContext];
+//    }
+    
     /* 获取托管对象 */
     NSFetchRequest *request =
-    [NSFetchRequest fetchRequestWithEntityName:@"Item"];
+    [NSFetchRequest fetchRequestWithEntityName:@"Unit"];
+    request.fetchLimit = 50;
     
-    // 排序描述符
-    NSSortDescriptor *sort =
-    [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-    request.sortDescriptors = @[sort,];
+//    // 排序描述符
+//    NSSortDescriptor *sort =
+//    [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+//    request.sortDescriptors = @[sort,];
     
     // 获取请求模板
 //    NSFetchRequest *request =
 //    [[self.cdh.model fetchRequestTemplateForName:@"Test"] copy];
     
     // 筛选
-    NSPredicate *filter =
-    [NSPredicate predicateWithFormat:@"name != %@", @"Coffee"];
-    request.predicate = filter;
+//    NSPredicate *filter =
+//    [NSPredicate predicateWithFormat:@"name != %@", @"Coffee"];
+//    request.predicate = filter;
     
+    NSError *error = nil;
     NSArray *fetchedObjects =
-    [self.cdh.context executeFetchRequest:request error:nil];
+    [self.cdh.context executeFetchRequest:request error:&error];
     
-    for (Item *item in fetchedObjects) {
-        FSLog(@"Fetched Object = %@", item.name);
-        
-        // 删除托管对象
-//        [self.cdh.context deleteObject:item];
+    if (error) {
+        FSLog(@"%@", error);
+    }
+    else {
+        for (Unit *item in fetchedObjects) {
+            FSLog(@"Fetched Object = %@", item.name);
+            
+            // 删除托管对象
+            //        [self.cdh.context deleteObject:item];
+        }
     }
 }
 
@@ -70,6 +93,8 @@
     FSRootViewController *rootVC = [[FSRootViewController alloc] init];
     UINavigationController *navi =
     [[UINavigationController alloc] initWithRootViewController:rootVC];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     self.window.rootViewController = navi;
     [self.window makeKeyAndVisible];

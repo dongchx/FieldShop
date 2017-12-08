@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G1036" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Item" representedClassName="Item" syncable="YES">
+        <attribute name="collected" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="listed" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" defaultValueString="New Item" indexed="YES" syncable="YES"/>
+        <attribute name="photoData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Float" defaultValueString="1" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="Measurement" representedClassName="Measurement" syncable="YES">
+        <attribute name="abc" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <fetchRequest name="Test" entity="Item" predicateString="name != &quot;Coffee&quot;"/>
+    <elements>
+        <element name="Item" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Measurement" positionX="-36" positionY="45" width="128" height="60"/>
+    </elements>
+</model>

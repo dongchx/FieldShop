@@ -18,6 +18,15 @@
 		A4D6C8331FD7F5220066251F /* Item+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C8301FD7F5220066251F /* Item+CoreDataClass.m */; };
 		A4D6C8341FD7F5220066251F /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C8321FD7F5220066251F /* Item+CoreDataProperties.m */; };
 		A4D6C8391FD7F5E80066251F /* FSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C8381FD7F5E80066251F /* FSRootViewController.m */; };
+		A4D6C83F1FD9190D0066251F /* Measurement+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C83C1FD9190D0066251F /* Measurement+CoreDataClass.m */; };
+		A4D6C8401FD9190D0066251F /* Measurement+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C83E1FD9190D0066251F /* Measurement+CoreDataProperties.m */; };
+		A4D6C84A1FD92AE10066251F /* Model2ToModel3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C8491FD92AE10066251F /* Model2ToModel3.xcmappingmodel */; };
+		A4D6C84F1FD92C850066251F /* Amount+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C84C1FD92C850066251F /* Amount+CoreDataClass.m */; };
+		A4D6C8501FD92C850066251F /* Amount+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C84E1FD92C850066251F /* Amount+CoreDataProperties.m */; };
+		A4FC4AC51FDAB0040028704B /* FSMigrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4FC4AC41FDAB0040028704B /* FSMigrationViewController.m */; };
+		A4FC4ACA1FDAB6CA0028704B /* Model3ToModel4.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = A4FC4AC91FDAB6CA0028704B /* Model3ToModel4.xcmappingmodel */; };
+		A4FC4ACF1FDAB7670028704B /* Unit+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A4FC4ACC1FDAB7670028704B /* Unit+CoreDataClass.m */; };
+		A4FC4AD01FDAB7670028704B /* Unit+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A4FC4ACE1FDAB7670028704B /* Unit+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +72,25 @@
 		A4D6C8321FD7F5220066251F /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Item+CoreDataProperties.m"; path = "DataModel/ModelClass/Item+CoreDataProperties.m"; sourceTree = "<group>"; };
 		A4D6C8371FD7F5E80066251F /* FSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSRootViewController.h; path = Business/MainView/FSRootViewController.h; sourceTree = "<group>"; };
 		A4D6C8381FD7F5E80066251F /* FSRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSRootViewController.m; path = Business/MainView/FSRootViewController.m; sourceTree = "<group>"; };
+		A4D6C83A1FD915CB0066251F /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
+		A4D6C83B1FD9190D0066251F /* Measurement+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Measurement+CoreDataClass.h"; path = "DataModel/ModelClass/Measurement+CoreDataClass.h"; sourceTree = "<group>"; };
+		A4D6C83C1FD9190D0066251F /* Measurement+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Measurement+CoreDataClass.m"; path = "DataModel/ModelClass/Measurement+CoreDataClass.m"; sourceTree = "<group>"; };
+		A4D6C83D1FD9190D0066251F /* Measurement+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Measurement+CoreDataProperties.h"; path = "DataModel/ModelClass/Measurement+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A4D6C83E1FD9190D0066251F /* Measurement+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Measurement+CoreDataProperties.m"; path = "DataModel/ModelClass/Measurement+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A4D6C8481FD929A90066251F /* Model 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 3.xcdatamodel"; sourceTree = "<group>"; };
+		A4D6C8491FD92AE10066251F /* Model2ToModel3.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; name = Model2ToModel3.xcmappingmodel; path = DataModel/Model2ToModel3.xcmappingmodel; sourceTree = "<group>"; };
+		A4D6C84B1FD92C850066251F /* Amount+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Amount+CoreDataClass.h"; path = "DataModel/ModelClass/Amount+CoreDataClass.h"; sourceTree = "<group>"; };
+		A4D6C84C1FD92C850066251F /* Amount+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Amount+CoreDataClass.m"; path = "DataModel/ModelClass/Amount+CoreDataClass.m"; sourceTree = "<group>"; };
+		A4D6C84D1FD92C850066251F /* Amount+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Amount+CoreDataProperties.h"; path = "DataModel/ModelClass/Amount+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A4D6C84E1FD92C850066251F /* Amount+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Amount+CoreDataProperties.m"; path = "DataModel/ModelClass/Amount+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A4FC4AC31FDAB0040028704B /* FSMigrationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FSMigrationViewController.h; path = Business/MainView/FSMigrationViewController.h; sourceTree = "<group>"; };
+		A4FC4AC41FDAB0040028704B /* FSMigrationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FSMigrationViewController.m; path = Business/MainView/FSMigrationViewController.m; sourceTree = "<group>"; };
+		A4FC4AC61FDAB6270028704B /* Model 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 4.xcdatamodel"; sourceTree = "<group>"; };
+		A4FC4AC91FDAB6CA0028704B /* Model3ToModel4.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; name = Model3ToModel4.xcmappingmodel; path = DataModel/Model3ToModel4.xcmappingmodel; sourceTree = "<group>"; };
+		A4FC4ACB1FDAB7670028704B /* Unit+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit+CoreDataClass.h"; sourceTree = "<group>"; };
+		A4FC4ACC1FDAB7670028704B /* Unit+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Unit+CoreDataClass.m"; sourceTree = "<group>"; };
+		A4FC4ACD1FDAB7670028704B /* Unit+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A4FC4ACE1FDAB7670028704B /* Unit+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Unit+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +206,8 @@
 			children = (
 				A4D6C80B1FD7D9000066251F /* ModelClass */,
 				A4D6C8081FD7D06C0066251F /* Model.xcdatamodeld */,
+				A4D6C8491FD92AE10066251F /* Model2ToModel3.xcmappingmodel */,
+				A4FC4AC91FDAB6CA0028704B /* Model3ToModel4.xcmappingmodel */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -185,6 +215,18 @@
 		A4D6C80B1FD7D9000066251F /* ModelClass */ = {
 			isa = PBXGroup;
 			children = (
+				A4FC4ACB1FDAB7670028704B /* Unit+CoreDataClass.h */,
+				A4FC4ACC1FDAB7670028704B /* Unit+CoreDataClass.m */,
+				A4FC4ACD1FDAB7670028704B /* Unit+CoreDataProperties.h */,
+				A4FC4ACE1FDAB7670028704B /* Unit+CoreDataProperties.m */,
+				A4D6C84B1FD92C850066251F /* Amount+CoreDataClass.h */,
+				A4D6C84C1FD92C850066251F /* Amount+CoreDataClass.m */,
+				A4D6C84D1FD92C850066251F /* Amount+CoreDataProperties.h */,
+				A4D6C84E1FD92C850066251F /* Amount+CoreDataProperties.m */,
+				A4D6C83B1FD9190D0066251F /* Measurement+CoreDataClass.h */,
+				A4D6C83C1FD9190D0066251F /* Measurement+CoreDataClass.m */,
+				A4D6C83D1FD9190D0066251F /* Measurement+CoreDataProperties.h */,
+				A4D6C83E1FD9190D0066251F /* Measurement+CoreDataProperties.m */,
 				A4D6C82F1FD7F5220066251F /* Item+CoreDataClass.h */,
 				A4D6C8301FD7F5220066251F /* Item+CoreDataClass.m */,
 				A4D6C8311FD7F5220066251F /* Item+CoreDataProperties.h */,
@@ -206,6 +248,8 @@
 			children = (
 				A4D6C8371FD7F5E80066251F /* FSRootViewController.h */,
 				A4D6C8381FD7F5E80066251F /* FSRootViewController.m */,
+				A4FC4AC31FDAB0040028704B /* FSMigrationViewController.h */,
+				A4FC4AC41FDAB0040028704B /* FSMigrationViewController.m */,
 			);
 			name = MainView;
 			sourceTree = "<group>";
@@ -342,13 +386,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4D6C83F1FD9190D0066251F /* Measurement+CoreDataClass.m in Sources */,
+				A4FC4ACF1FDAB7670028704B /* Unit+CoreDataClass.m in Sources */,
+				A4FC4AC51FDAB0040028704B /* FSMigrationViewController.m in Sources */,
 				A4D6C8341FD7F5220066251F /* Item+CoreDataProperties.m in Sources */,
 				A4D6C8331FD7F5220066251F /* Item+CoreDataClass.m in Sources */,
+				A4D6C84A1FD92AE10066251F /* Model2ToModel3.xcmappingmodel in Sources */,
+				A4FC4ACA1FDAB6CA0028704B /* Model3ToModel4.xcmappingmodel in Sources */,
 				A4D6C8391FD7F5E80066251F /* FSRootViewController.m in Sources */,
+				A4D6C8501FD92C850066251F /* Amount+CoreDataProperties.m in Sources */,
 				A4D6C7F91FD67FD30066251F /* FSCoreDataHelper.m in Sources */,
+				A4D6C8401FD9190D0066251F /* Measurement+CoreDataProperties.m in Sources */,
 				A4D6C7C51FD67C9D0066251F /* AppDelegate.m in Sources */,
 				A4D6C7C21FD67C9D0066251F /* main.m in Sources */,
+				A4D6C84F1FD92C850066251F /* Amount+CoreDataClass.m in Sources */,
 				A4D6C80A1FD7D06C0066251F /* Model.xcdatamodeld in Sources */,
+				A4FC4AD01FDAB7670028704B /* Unit+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,9 +657,12 @@
 		A4D6C8081FD7D06C0066251F /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				A4FC4AC61FDAB6270028704B /* Model 4.xcdatamodel */,
+				A4D6C8481FD929A90066251F /* Model 3.xcdatamodel */,
+				A4D6C83A1FD915CB0066251F /* Model 2.xcdatamodel */,
 				A4D6C8091FD7D06C0066251F /* Model.xcdatamodel */,
 			);
-			currentVersion = A4D6C8091FD7D06C0066251F /* Model.xcdatamodel */;
+			currentVersion = A4FC4AC61FDAB6270028704B /* Model 4.xcdatamodel */;
 			name = Model.xcdatamodeld;
 			path = DataModel/Model.xcdatamodeld;
 			sourceTree = "<group>";
