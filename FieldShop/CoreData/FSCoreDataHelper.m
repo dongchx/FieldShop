@@ -84,7 +84,7 @@ NSString *storeFilename = @"Field-Shop.sqlite";
     
     if (_store) { return; }
     
-    BOOL useMigrationManager = YES;
+    BOOL useMigrationManager = NO;
     if (useMigrationManager &&
         [self isMigrationNecessaryForStore:[self storeURL]]) {
         // migration
@@ -94,7 +94,7 @@ NSString *storeFilename = @"Field-Shop.sqlite";
         NSDictionary *options =
         @{
           NSMigratePersistentStoresAutomaticallyOption : @YES,
-          NSInferMappingModelAutomaticallyOption       : @NO,
+          NSInferMappingModelAutomaticallyOption       : @YES,
           NSSQLitePragmasOption : @{@"journal_mode" : @"DELETE"},
           };
         
@@ -134,6 +134,7 @@ NSString *storeFilename = @"Field-Shop.sqlite";
         }
         else {
             FSLog(@"Failed to save _context: %@", error);
+            [self showValidationError:error];
         }
     }
     else {
@@ -313,6 +314,119 @@ NSString *storeFilename = @"Field-Shop.sqlite";
                            });
                        }
                    });
+}
+
+- (void)showValidationError:(NSError *)anError
+{
+    if (anError && [anError.domain isEqualToString:@"NSCocoaErrorDomain"]) {
+        NSArray  *errors = nil; // holds all errors
+        NSString *txt = @"";   // the error message text of the alert
+        
+        if (anError.code == NSValidationMultipleErrorsError) {
+            errors = [anError.userInfo objectForKey:NSDetailedErrorsKey];
+        }
+        else {
+            errors = [NSArray arrayWithObject:anError];
+        }
+        
+        if (errors && errors.count > 0) {
+            // build error message text based on errors
+            for (NSError *error in errors) {
+                NSString *entity =
+                [[[error.userInfo objectForKey:@"NSValidationErrorObject"] entity] name];
+                
+                NSString *property =
+                [error.userInfo objectForKey:@"NSValidationErrorKey"];
+                
+                switch (error.code) {
+                    case NSValidationRelationshipDeniedDeleteError:
+                        txt =
+                        [txt stringByAppendingFormat:
+                         @"%@ delete was denied because there are associated %@\n(Error Code:%li)\n\n",
+                         entity, property, error.code];
+                        break;
+                        
+                    case NSValidationRelationshipLacksMinimumCountError:
+                        txt =
+                        [txt stringByAppendingFormat:
+                         @"the '%@' relationship count is too small (Code %li)", property, error.code];
+                        break;
+                        
+                    case NSValidationRelationshipExceedsMaximumCountError:
+                        txt =
+                        [txt stringByAppendingFormat:
+                         @"the '%@' relationship count is too large (Code %li)", property, error.code];
+                        break;
+                        
+                    case NSValidationMissingMandatoryPropertyError:
+                        txt =
+                        [txt stringByAppendingFormat:
+                         @"the '%@' property is missing (Code %li)", property, error.code];
+                        break;
+                        
+                    case NSValidationNumberTooSmallError:
+                        txt =
+                        [txt stringByAppendingFormat:
+                         @"the '%@' number is too small (Code %li)", property, error.code];
+                        break;
+                   
+                    case NSValidationNumberTooLargeError:
+                        txt =
+                        [txt stringByAppendingFormat:
+                         @"the '%@' number is too large (Code %li)", property, error.code];
+                        break;
+                    
+                    case NSValidationDateTooSoonError:
+                        txt =
+                        [txt stringByAppendingFormat:
+                         @"the '%@' date is too soon (Code %li)", property, error.code];
+                        break;
+                        
+                    case NSValidationDateTooLateError:
+                        txt =
+                        [txt stringByAppendingFormat:
+                         @"the '%@' date is too late (Code %li)", property, error.code];
+                        break;
+                    
+                    case NSValidationInvalidDateError:
+                        txt =
+                        [txt stringByAppendingFormat:
+                         @"the '%@' date us invalid (Code %li)", property, error.code];
+                        break;
+                        
+                    case NSValidationStringTooLongError:
+                        txt =
+                        [txt stringByAppendingFormat:
+                         @"the '%@' text is too long (Code %li)", property, error.code];
+                        break;
+                        
+                    case NSValidationStringTooShortError:
+                        txt =
+                        [txt stringByAppendingFormat:
+                         @"the '%@' text is too short (Code %li)", property, error.code];
+                        break;
+                    
+                    case NSValidationStringPatternMatchingError:
+                        txt =
+                        [txt stringByAppendingFormat:
+                         @"the '%@' text doesn't match the specified pattern (Code %li)", property, error.code];
+                        break;
+                        
+                    case NSManagedObjectValidationError:
+                        txt =
+                        [txt stringByAppendingFormat:
+                         @"generated validation error (Code %li)", error.code];
+                        break;
+                        
+                    default:
+                        txt =
+                        [txt stringByAppendingFormat:
+                         @"Unhandled error code %li in showValidationError method", error.code];
+                        break;
+                }
+            }
+        }
+    }
 }
 
 @end

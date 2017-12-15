@@ -2,8 +2,9 @@
 //  Item+CoreDataProperties.m
 //  FieldShop
 //
-//  Created by dongchx on 06/12/2017.
+//  Created by dongchx on 11/12/2017.
 //  Copyright © 2017 dongchx. All rights reserved.
+//
 //
 
 #import "Item+CoreDataProperties.h"
@@ -19,5 +20,6 @@
 @dynamic name;
 @dynamic photoData;
 @dynamic quantity;
+@dynamic unit;
 
 @end

@@ -23,6 +23,35 @@
 {
     FSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     
+    Unit *kg =
+    [NSEntityDescription insertNewObjectForEntityForName:@"Unit"
+                                  inManagedObjectContext:self.cdh.context];
+    
+    Item *oranges =
+    [NSEntityDescription insertNewObjectForEntityForName:@"Item"
+                                  inManagedObjectContext:self.cdh.context];
+    
+    Item *bananas =
+    [NSEntityDescription insertNewObjectForEntityForName:@"Item"
+                                  inManagedObjectContext:self.cdh.context];
+    
+    kg.name = @"Kg";
+    oranges.name = @"Oranges";
+    bananas.name = @"Bananas";
+    oranges.quantity = @1;
+    bananas.quantity = @4;
+    oranges.listed = @YES;
+    bananas.listed = @YES;
+    oranges.unit = kg;
+    oranges.unit = kg;
+    
+    FSLog(@"Inserted %@%@ %@",
+          oranges.quantity, oranges.unit.name, oranges.name);
+    FSLog(@"Inserted %@%@ %@",
+          bananas.quantity, bananas.unit.name, bananas.name);
+    
+    [self.cdh saveContext];
+    
     // 创建托管对象
 //    NSArray *newItemNames =
 //    @[@"Apples", @"Milk", @"Bread", @"Cheese", @"Sausages", @"Butter",
@@ -52,9 +81,9 @@
 //    }
     
     /* 获取托管对象 */
-    NSFetchRequest *request =
-    [NSFetchRequest fetchRequestWithEntityName:@"Unit"];
-    request.fetchLimit = 50;
+//    NSFetchRequest *request =
+//    [NSFetchRequest fetchRequestWithEntityName:@"Unit"];
+//    request.fetchLimit = 50;
     
 //    // 排序描述符
 //    NSSortDescriptor *sort =
@@ -70,21 +99,21 @@
 //    [NSPredicate predicateWithFormat:@"name != %@", @"Coffee"];
 //    request.predicate = filter;
     
-    NSError *error = nil;
-    NSArray *fetchedObjects =
-    [self.cdh.context executeFetchRequest:request error:&error];
-    
-    if (error) {
-        FSLog(@"%@", error);
-    }
-    else {
-        for (Unit *item in fetchedObjects) {
-            FSLog(@"Fetched Object = %@", item.name);
-            
-            // 删除托管对象
-            //        [self.cdh.context deleteObject:item];
-        }
-    }
+//    NSError *error = nil;
+//    NSArray *fetchedObjects =
+//    [self.cdh.context executeFetchRequest:request error:&error];
+//    
+//    if (error) {
+//        FSLog(@"%@", error);
+//    }
+//    else {
+//        for (Unit *item in fetchedObjects) {
+//            FSLog(@"Fetched Object = %@", item.name);
+//            
+//            // 删除托管对象
+//            //        [self.cdh.context deleteObject:item];
+//        }
+//    }
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
