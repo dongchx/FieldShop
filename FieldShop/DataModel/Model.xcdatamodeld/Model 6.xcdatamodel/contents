@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17C88" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Item" representedClassName="Item" syncable="YES">
-        <attribute name="attribute" optional="YES" syncable="YES"/>
         <attribute name="collected" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="listed" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" defaultValueString="New Item" syncable="YES"/>
         <attribute name="photoData" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Float" defaultValueString="1" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="locationAtHome" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocationAtHome" inverseName="items" inverseEntity="LocationAtHome" syncable="YES"/>
-        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocationAtShop" inverseName="items" inverseEntity="LocationAtShop" syncable="YES"/>
+        <relationship name="locationAtShop" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocationAtShop" inverseName="items" inverseEntity="LocationAtShop" syncable="YES"/>
         <relationship name="unit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Unit" inverseName="items" inverseEntity="Unit" syncable="YES"/>
         <fetchIndex name="byNameIndex">
             <fetchIndexElement property="name" type="Binary" order="ascending"/>
         </fetchIndex>
     </entity>
-    <entity name="Location" representedClassName="Location" isAbstract="YES" syncable="YES" codeGenerationType="class">
+    <entity name="Location" representedClassName="Location" isAbstract="YES" syncable="YES">
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="LocationAtHome" representedClassName="LocationAtHome" parentEntity="Location" syncable="YES" codeGenerationType="class">
+    <entity name="LocationAtHome" representedClassName="LocationAtHome" parentEntity="Location" syncable="YES">
         <attribute name="storedIn" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="locationAtHome" inverseEntity="Item" syncable="YES"/>
     </entity>
-    <entity name="LocationAtShop" representedClassName="LocationAtShop" parentEntity="Location" syncable="YES" codeGenerationType="class">
+    <entity name="LocationAtShop" representedClassName="LocationAtShop" parentEntity="Location" syncable="YES">
         <attribute name="aisle" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="newRelationship" inverseEntity="Item" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="locationAtShop" inverseEntity="Item" syncable="YES"/>
     </entity>
     <entity name="Unit" representedClassName="Unit" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -31,10 +30,10 @@
     </entity>
     <fetchRequest name="Test" entity="Item" predicateString="name != &quot;Coffee&quot;"/>
     <elements>
-        <element name="Item" positionX="-740" positionY="81" width="128" height="178"/>
-        <element name="Unit" positionX="-486" positionY="206" width="128" height="73"/>
-        <element name="Location" positionX="-738" positionY="-81" width="128" height="60"/>
+        <element name="Item" positionX="-740" positionY="81" width="128" height="163"/>
+        <element name="Location" positionX="-738" positionY="-81" width="128" height="58"/>
         <element name="LocationAtHome" positionX="-1001" positionY="30" width="128" height="73"/>
         <element name="LocationAtShop" positionX="-506" positionY="27" width="128" height="73"/>
+        <element name="Unit" positionX="-486" positionY="206" width="128" height="73"/>
     </elements>
 </model>

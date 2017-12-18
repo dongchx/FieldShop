@@ -9,8 +9,6 @@
 #import "AppDelegate.h"
 #import "FSRootViewController.h"
 #import "Item+CoreDataProperties.h"
-#import "Measurement+CoreDataProperties.h"
-#import "Amount+CoreDataProperties.h"
 #import "Unit+CoreDataProperties.h"
 
 @interface AppDelegate ()
