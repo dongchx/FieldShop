@@ -8,8 +8,11 @@
 
 #import "AppDelegate.h"
 #import "FSRootViewController.h"
+#import "FSRootTabController.h"
 #import "Item+CoreDataProperties.h"
 #import "Unit+CoreDataProperties.h"
+#import "LocationAtHome+CoreDataProperties.h"
+#import "LocationAtShop+CoreDataProperties.h"
 
 @interface AppDelegate ()
 
@@ -19,36 +22,42 @@
 
 - (void)demo
 {
-    FSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    FSDebug;
     
-    Unit *kg =
-    [NSEntityDescription insertNewObjectForEntityForName:@"Unit"
-                                  inManagedObjectContext:self.cdh.context];
-    
-    Item *oranges =
-    [NSEntityDescription insertNewObjectForEntityForName:@"Item"
-                                  inManagedObjectContext:self.cdh.context];
-    
-    Item *bananas =
-    [NSEntityDescription insertNewObjectForEntityForName:@"Item"
-                                  inManagedObjectContext:self.cdh.context];
-    
-    kg.name = @"Kg";
-    oranges.name = @"Oranges";
-    bananas.name = @"Bananas";
-    oranges.quantity = @1;
-    bananas.quantity = @4;
-    oranges.listed = @YES;
-    bananas.listed = @YES;
-    oranges.unit = kg;
-    oranges.unit = kg;
-    
-    FSLog(@"Inserted %@%@ %@",
-          oranges.quantity, oranges.unit.name, oranges.name);
-    FSLog(@"Inserted %@%@ %@",
-          bananas.quantity, bananas.unit.name, bananas.name);
-    
-    [self.cdh saveContext];
+//    FSCoreDataHelper *cdh = [self cdh];
+//
+//    NSArray *homeLocations = @[@"Fruit Bowl", @"Pantry", @"Nuresery", @"Bathroom", @"Fridge"];
+//    NSArray *shopLocations = @[@"Product", @"Aisle 1", @"Aisle 2", @"Aisle3", @"Deli"];
+//    NSArray *unitNames = @[@"g", @"pkt", @"box", @"ml", @"kg"];
+//    NSArray *itemNames = @[@"Grapes", @"Biscuits", @"Nappies", @"Shampoo", @"Sausages"];
+//
+//
+//    for (int i = 0; i < 5; i++) {
+//        LocationAtHome *locationAtHome =
+//        [NSEntityDescription insertNewObjectForEntityForName:@"LocationAtHome"
+//                                      inManagedObjectContext:cdh.context];
+//        LocationAtShop *locationAtShop =
+//        [NSEntityDescription insertNewObjectForEntityForName:@"LocationAtShop"
+//                                      inManagedObjectContext:cdh.context];
+//        Unit *unit =
+//        [NSEntityDescription insertNewObjectForEntityForName:@"Unit"
+//                                      inManagedObjectContext:cdh.context];
+//        Item *item =
+//        [NSEntityDescription insertNewObjectForEntityForName:@"Item"
+//                                      inManagedObjectContext:cdh.context];
+//
+//        locationAtHome.storedIn = [homeLocations objectAtIndex:i];
+//        locationAtShop.aisle = [shopLocations objectAtIndex:i];
+//        unit.name = [unitNames objectAtIndex:i];
+//        item.name = [itemNames objectAtIndex:i];
+//
+//        item.locationAtHome = locationAtHome;
+//        item.locationAtShop = locationAtShop;
+//        item.unit = unit;
+//    }
+//
+//
+//    [cdh saveContext];
     
     // 创建托管对象
 //    NSArray *newItemNames =
@@ -117,13 +126,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    FSRootViewController *rootVC = [[FSRootViewController alloc] init];
-    UINavigationController *navi =
-    [[UINavigationController alloc] initWithRootViewController:rootVC];
-    
+//    FSRootViewController *rootVC = [[FSRootViewController alloc] init];
+    FSRootTabController *rootVC = [[FSRootTabController alloc] init];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    self.window.rootViewController = navi;
+    self.window.rootViewController = rootVC;
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -170,7 +177,10 @@
     FSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     
     if (!_coreDataHelper) {
-        _coreDataHelper = [[FSCoreDataHelper alloc] init];
+        static dispatch_once_t predicate;
+        dispatch_once(&predicate, ^{
+            _coreDataHelper = [[FSCoreDataHelper alloc] init];
+        });
         [_coreDataHelper setupCoreData];
     }
     

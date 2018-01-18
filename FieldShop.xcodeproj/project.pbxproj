@@ -13,11 +13,15 @@
 		A4794BCF1FE7DE5600ED9F33 /* Location+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A4794BBE1FE7DE5600ED9F33 /* Location+CoreDataClass.m */; };
 		A4794BD01FE7DE5600ED9F33 /* Location+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A4794BC01FE7DE5600ED9F33 /* Location+CoreDataProperties.m */; };
 		A4794BD11FE7DE5600ED9F33 /* Item+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A4794BC21FE7DE5600ED9F33 /* Item+CoreDataClass.m */; };
-		A4794BD21FE7DE5600ED9F33 /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A4794BC41FE7DE5600ED9F33 /* Item+CoreDataProperties.m */; };
 		A4794BD31FE7DE5600ED9F33 /* LocationAtShop+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A4794BC61FE7DE5600ED9F33 /* LocationAtShop+CoreDataClass.m */; };
 		A4794BD41FE7DE5600ED9F33 /* LocationAtShop+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A4794BC81FE7DE5600ED9F33 /* LocationAtShop+CoreDataProperties.m */; };
 		A4794BD51FE7DE5600ED9F33 /* Unit+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A4794BCA1FE7DE5600ED9F33 /* Unit+CoreDataClass.m */; };
 		A4794BD61FE7DE5600ED9F33 /* Unit+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A4794BCC1FE7DE5600ED9F33 /* Unit+CoreDataProperties.m */; };
+		A4794BD91FE7E37F00ED9F33 /* FSCoreDataTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A4794BD81FE7E37F00ED9F33 /* FSCoreDataTVC.m */; };
+		A4B1F6D4201051A300039612 /* FSRootTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B1F6D3201051A300039612 /* FSRootTabController.m */; };
+		A4B1F6D820107A2500039612 /* FSPrepareTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B1F6D720107A2500039612 /* FSPrepareTVC.m */; };
+		A4B1F6DB20107A4600039612 /* FSShopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B1F6DA20107A4600039612 /* FSShopVC.m */; };
+		A4B1F6DE201099B800039612 /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B1F6DC201099B700039612 /* Item+CoreDataProperties.m */; };
 		A4D6C7C21FD67C9D0066251F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C7C11FD67C9D0066251F /* main.m */; };
 		A4D6C7C51FD67C9D0066251F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D6C7C41FD67C9D0066251F /* AppDelegate.m */; };
 		A4D6C7CD1FD67C9D0066251F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D6C7CC1FD67C9D0066251F /* Assets.xcassets */; };
@@ -61,8 +65,6 @@
 		A4794BC01FE7DE5600ED9F33 /* Location+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Location+CoreDataProperties.m"; sourceTree = "<group>"; };
 		A4794BC11FE7DE5600ED9F33 /* Item+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataClass.h"; sourceTree = "<group>"; };
 		A4794BC21FE7DE5600ED9F33 /* Item+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataClass.m"; sourceTree = "<group>"; };
-		A4794BC31FE7DE5600ED9F33 /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Item+CoreDataProperties.h"; path = "DataModel/ModelClass/Item+CoreDataProperties.h"; sourceTree = "<group>"; };
-		A4794BC41FE7DE5600ED9F33 /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Item+CoreDataProperties.m"; path = "DataModel/ModelClass/Item+CoreDataProperties.m"; sourceTree = "<group>"; };
 		A4794BC51FE7DE5600ED9F33 /* LocationAtShop+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocationAtShop+CoreDataClass.h"; sourceTree = "<group>"; };
 		A4794BC61FE7DE5600ED9F33 /* LocationAtShop+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LocationAtShop+CoreDataClass.m"; sourceTree = "<group>"; };
 		A4794BC71FE7DE5600ED9F33 /* LocationAtShop+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocationAtShop+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -71,7 +73,17 @@
 		A4794BCA1FE7DE5600ED9F33 /* Unit+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Unit+CoreDataClass.m"; sourceTree = "<group>"; };
 		A4794BCB1FE7DE5600ED9F33 /* Unit+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit+CoreDataProperties.h"; sourceTree = "<group>"; };
 		A4794BCC1FE7DE5600ED9F33 /* Unit+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Unit+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A4794BD71FE7E37F00ED9F33 /* FSCoreDataTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FSCoreDataTVC.h; path = CoreData/FSCoreDataTVC.h; sourceTree = "<group>"; };
+		A4794BD81FE7E37F00ED9F33 /* FSCoreDataTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FSCoreDataTVC.m; path = CoreData/FSCoreDataTVC.m; sourceTree = "<group>"; };
 		A49C03371FDEAB2300FB0D62 /* Model 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 5.xcdatamodel"; sourceTree = "<group>"; };
+		A4B1F6D2201051A300039612 /* FSRootTabController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FSRootTabController.h; path = Business/MainView/FSRootTabController.h; sourceTree = "<group>"; };
+		A4B1F6D3201051A300039612 /* FSRootTabController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FSRootTabController.m; path = Business/MainView/FSRootTabController.m; sourceTree = "<group>"; };
+		A4B1F6D620107A2500039612 /* FSPrepareTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FSPrepareTVC.h; path = Business/SubTabVC/FSPrepareTVC.h; sourceTree = "<group>"; };
+		A4B1F6D720107A2500039612 /* FSPrepareTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FSPrepareTVC.m; path = Business/SubTabVC/FSPrepareTVC.m; sourceTree = "<group>"; };
+		A4B1F6D920107A4600039612 /* FSShopVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FSShopVC.h; path = Business/FSShopVC.h; sourceTree = "<group>"; };
+		A4B1F6DA20107A4600039612 /* FSShopVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FSShopVC.m; path = Business/FSShopVC.m; sourceTree = "<group>"; };
+		A4B1F6DC201099B700039612 /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A4B1F6DD201099B800039612 /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataProperties.h"; sourceTree = "<group>"; };
 		A4D6C7BD1FD67C9D0066251F /* FieldShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FieldShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D6C7C11FD67C9D0066251F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A4D6C7C31FD67C9D0066251F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -129,6 +141,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A4B1F6D5201078F900039612 /* SubTabVC */ = {
+			isa = PBXGroup;
+			children = (
+				A4B1F6D620107A2500039612 /* FSPrepareTVC.h */,
+				A4B1F6D720107A2500039612 /* FSPrepareTVC.m */,
+				A4B1F6D920107A4600039612 /* FSShopVC.h */,
+				A4B1F6DA20107A4600039612 /* FSShopVC.m */,
+			);
+			name = SubTabVC;
+			sourceTree = "<group>";
+		};
 		A4D6C7B41FD67C9D0066251F = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +231,8 @@
 			children = (
 				A4D6C7F71FD67FD30066251F /* FSCoreDataHelper.h */,
 				A4D6C7F81FD67FD30066251F /* FSCoreDataHelper.m */,
+				A4794BD71FE7E37F00ED9F33 /* FSCoreDataTVC.h */,
+				A4794BD81FE7E37F00ED9F33 /* FSCoreDataTVC.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -226,6 +251,8 @@
 		A4D6C80B1FD7D9000066251F /* ModelClass */ = {
 			isa = PBXGroup;
 			children = (
+				A4B1F6DD201099B800039612 /* Item+CoreDataProperties.h */,
+				A4B1F6DC201099B700039612 /* Item+CoreDataProperties.m */,
 				A4794BB91FE7DE5600ED9F33 /* LocationAtHome+CoreDataClass.h */,
 				A4794BBA1FE7DE5600ED9F33 /* LocationAtHome+CoreDataClass.m */,
 				A4794BBB1FE7DE5600ED9F33 /* LocationAtHome+CoreDataProperties.h */,
@@ -236,8 +263,6 @@
 				A4794BC01FE7DE5600ED9F33 /* Location+CoreDataProperties.m */,
 				A4794BC11FE7DE5600ED9F33 /* Item+CoreDataClass.h */,
 				A4794BC21FE7DE5600ED9F33 /* Item+CoreDataClass.m */,
-				A4794BC31FE7DE5600ED9F33 /* Item+CoreDataProperties.h */,
-				A4794BC41FE7DE5600ED9F33 /* Item+CoreDataProperties.m */,
 				A4794BC51FE7DE5600ED9F33 /* LocationAtShop+CoreDataClass.h */,
 				A4794BC61FE7DE5600ED9F33 /* LocationAtShop+CoreDataClass.m */,
 				A4794BC71FE7DE5600ED9F33 /* LocationAtShop+CoreDataProperties.h */,
@@ -253,6 +278,7 @@
 		A4D6C8351FD7F5660066251F /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				A4B1F6D5201078F900039612 /* SubTabVC */,
 				A4D6C8361FD7F58B0066251F /* MainView */,
 			);
 			name = Business;
@@ -265,6 +291,8 @@
 				A4D6C8381FD7F5E80066251F /* FSRootViewController.m */,
 				A4FC4AC31FDAB0040028704B /* FSMigrationViewController.h */,
 				A4FC4AC41FDAB0040028704B /* FSMigrationViewController.m */,
+				A4B1F6D2201051A300039612 /* FSRootTabController.h */,
+				A4B1F6D3201051A300039612 /* FSRootTabController.m */,
 			);
 			name = MainView;
 			sourceTree = "<group>";
@@ -404,6 +432,7 @@
 			files = (
 				A4794BD01FE7DE5600ED9F33 /* Location+CoreDataProperties.m in Sources */,
 				A4FC4AC51FDAB0040028704B /* FSMigrationViewController.m in Sources */,
+				A4B1F6DE201099B800039612 /* Item+CoreDataProperties.m in Sources */,
 				A4D6C84A1FD92AE10066251F /* Model2ToModel3.xcmappingmodel in Sources */,
 				A4794BD61FE7DE5600ED9F33 /* Unit+CoreDataProperties.m in Sources */,
 				A4794BCE1FE7DE5600ED9F33 /* LocationAtHome+CoreDataProperties.m in Sources */,
@@ -412,9 +441,12 @@
 				A4794BD11FE7DE5600ED9F33 /* Item+CoreDataClass.m in Sources */,
 				A4794BCF1FE7DE5600ED9F33 /* Location+CoreDataClass.m in Sources */,
 				A4794BD31FE7DE5600ED9F33 /* LocationAtShop+CoreDataClass.m in Sources */,
+				A4B1F6D820107A2500039612 /* FSPrepareTVC.m in Sources */,
+				A4794BD91FE7E37F00ED9F33 /* FSCoreDataTVC.m in Sources */,
 				A4794BD51FE7DE5600ED9F33 /* Unit+CoreDataClass.m in Sources */,
+				A4B1F6DB20107A4600039612 /* FSShopVC.m in Sources */,
+				A4B1F6D4201051A300039612 /* FSRootTabController.m in Sources */,
 				A4794BD41FE7DE5600ED9F33 /* LocationAtShop+CoreDataProperties.m in Sources */,
-				A4794BD21FE7DE5600ED9F33 /* Item+CoreDataProperties.m in Sources */,
 				A4D6C8391FD7F5E80066251F /* FSRootViewController.m in Sources */,
 				A4D6C7F91FD67FD30066251F /* FSCoreDataHelper.m in Sources */,
 				A4D6C7C51FD67C9D0066251F /* AppDelegate.m in Sources */,

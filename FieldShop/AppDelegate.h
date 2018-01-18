@@ -14,5 +14,7 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, strong, readonly) FSCoreDataHelper *coreDataHelper;
 
+- (FSCoreDataHelper *)cdh;
+
 @end
 
