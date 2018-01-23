@@ -11,6 +11,7 @@
 #import "Item+CoreDataClass.h"
 #import "Unit+CoreDataClass.h"
 #import "AppDelegate.h"
+#import "FSItemVC.h"
 
 @interface FSShopVC ()
 
@@ -174,6 +175,17 @@
     
     [tableView reloadRowsAtIndexPaths:@[indexPath]
                      withRowAnimation:UITableViewRowAnimationNone];
+}
+
+- (void)                       tableView:(UITableView *)tableView
+accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    FSDebug;
+    
+    FSItemVC *itemVC = [[FSItemVC alloc] init];
+    itemVC.selectedItemID = [[self.frc objectAtIndexPath:indexPath] objectID];
+    
+    [self.navigationController pushViewController:itemVC animated:YES];
 }
 
 @end

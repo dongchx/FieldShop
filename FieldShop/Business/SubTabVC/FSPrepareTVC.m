@@ -11,6 +11,7 @@
 #import "Item+CoreDataProperties.h"
 #import "Unit+CoreDataProperties.h"
 #import "AppDelegate.h"
+#import "FSItemVC.h"
 
 @interface FSPrepareTVC ()
 
@@ -42,12 +43,19 @@
 - (void)setupSubviews:(UIView *)parentView
 {
     FSDebug;
-    UIBarButtonItem *barButton =
+    UIBarButtonItem *leftButton =
     [[UIBarButtonItem alloc] initWithTitle:@"Clear"
                                      style:UIBarButtonItemStylePlain
                                     target:self
                                     action:@selector(clear:)];
-    self.navigationItem.leftBarButtonItem = barButton;
+    self.navigationItem.leftBarButtonItem = leftButton;
+    
+    UIBarButtonItem *rightButton =
+    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                  target:self
+                                                  action:nil];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    
 }
 
 #pragma mark - data
@@ -229,6 +237,17 @@
     [tableView reloadRowsAtIndexPaths:@[indexPath]
                      withRowAnimation:UITableViewRowAnimationNone];
     
+}
+
+- (void)                       tableView:(UITableView *)tableView
+accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    FSDebug;
+    
+    FSItemVC *itemVC = [[FSItemVC alloc] init];
+    itemVC.selectedItemID = [[self.frc objectAtIndexPath:indexPath] objectID];
+    
+    [self.navigationController pushViewController:itemVC animated:YES];
 }
 
 @end
