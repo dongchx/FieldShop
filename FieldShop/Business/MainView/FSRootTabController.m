@@ -49,4 +49,16 @@
 
 #pragma mark - UITabBarControllerDelegate
 
+//- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+//{
+//    if ([item.title isEqualToString:@"prepare"]) {
+//        self.navigationItem.title = @"Prepare";
+//    }
+//    else if ([item.title isEqualToString:@"shop"]) {
+//        self.navigationItem.title = @"Shop";
+//    }
+//}
+
+
+
 @end

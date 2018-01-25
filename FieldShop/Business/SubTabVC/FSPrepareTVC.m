@@ -32,10 +32,31 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(performFetch)
-                                                 name:@"FSSomethingChanged"
+                                                 name:kFSSomethingChangedNotification
                                                object:nil];
     
     [self setupSubviews:self.view];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    FSDebug;
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    FSDebug;
+    [super viewDidAppear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    FSDebug;
+    [super viewWillDisappear:animated];
+    self.tabBarController.tabBar.hidden = YES;
 }
 
 #pragma mark - subviews
@@ -53,7 +74,7 @@
     UIBarButtonItem *rightButton =
     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                   target:self
-                                                  action:nil];
+                                                  action:@selector(add:)];
     self.navigationItem.rightBarButtonItem = rightButton;
     
 }
@@ -118,6 +139,7 @@
                          otherButtonTitles:nil];
         [alert show];
     }
+    shoppingList = nil;
 }
 
 - (void)    actionSheet:(UIActionSheet *)actionSheet
@@ -149,6 +171,28 @@
     for (Item *item in shoppingList) {
         item.listed = @NO;
     }
+}
+
+- (void)add:(id)sender
+{
+    FSDebug;
+    FSItemVC *itemVC = [[FSItemVC alloc] init];
+    
+    FSCoreDataHelper *cdh =
+    [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+    
+    Item *newItem =
+    [NSEntityDescription insertNewObjectForEntityForName:@"Item"
+                                  inManagedObjectContext:cdh.context];
+    
+    NSError *error = nil;
+    if (![cdh.context obtainPermanentIDsForObjects:@[newItem]
+                                              error:&error]) {
+        FSLog(@"Counldn't obtain a permanent ID for object %@",error);
+    }
+    itemVC.selectedItemID = newItem.objectID;
+    
+    [self.navigationController pushViewController:itemVC animated:YES];
 }
 
 #pragma mark - tableViewDataSource

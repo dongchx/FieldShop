@@ -33,8 +33,29 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(performFetch)
-                                                 name:@"SomethingChanged"
+                                                 name:kFSSomethingChangedNotification
                                                object:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    FSDebug;
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    FSDebug;
+    [super viewDidAppear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    FSDebug;
+    [super viewWillDisappear:animated];
+    self.tabBarController.tabBar.hidden = YES;
 }
 
 #pragma mark - subviews

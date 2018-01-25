@@ -13,4 +13,6 @@
 #define FSLog(format, ...) if(debug == 1)NSLog(format, ## __VA_ARGS__)
 #define FSDebug FSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd))
 
+#define kFSSomethingChangedNotification   @"FSSomethingChanged"
+
 #endif /* FSCommonDefine_h */
