@@ -13,6 +13,8 @@
 #import "LocationAtHome+CoreDataClass.h"
 #import "LocationAtShop+CoreDataClass.h"
 #import "FSUnitTVC.h"
+#import "FSLocationsAtHomeTVC.h"
+#import "FSLocationAtShopTVC.h"
 
 @interface FSItemVC ()
 
@@ -223,12 +225,14 @@
 
 - (void)handleAddHomeLocation:(id)sender
 {
-    
+    FSLocationsAtHomeTVC *homeTVC = [[FSLocationsAtHomeTVC alloc] init];
+    [self.navigationController pushViewController:homeTVC animated:YES];
 }
 
 - (void)handleAddShopLocation:(id)sender
 {
-    
+    FSLocationAtShopTVC *shopTVC = [[FSLocationAtShopTVC alloc] init];
+    [self.navigationController pushViewController:shopTVC animated:YES];
 }
 
 #pragma mark - UITextFieldDelegate

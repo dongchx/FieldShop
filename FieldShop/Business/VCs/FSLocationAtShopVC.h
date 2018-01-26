@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FSCoreDataHelper.h"
 
 @interface FSLocationAtShopVC : UIViewController
+
+@property (nonatomic, strong) NSManagedObjectID *selectedObjectID;
 
 @end
