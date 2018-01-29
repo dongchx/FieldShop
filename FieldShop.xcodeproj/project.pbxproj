@@ -14,6 +14,10 @@
 		A42764892019C49D00A0AC28 /* FSLocationAtShopTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A42764882019C49D00A0AC28 /* FSLocationAtShopTVC.m */; };
 		A427648C201A035800A0AC28 /* FSLocationAtHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A427648B201A035800A0AC28 /* FSLocationAtHomeVC.m */; };
 		A427648F201A03AE00A0AC28 /* FSLocationAtShopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A427648E201A03AE00A0AC28 /* FSLocationAtShopVC.m */; };
+		A44499D2201F007E000974C1 /* FSCoreDataPickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = A44499D1201F007E000974C1 /* FSCoreDataPickerTF.m */; };
+		A44499E1201F1BEE000974C1 /* FSUnitPickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = A44499E0201F1BEE000974C1 /* FSUnitPickerTF.m */; };
+		A44499E4201F38F0000974C1 /* FSLocationAtHomePickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = A44499E3201F38F0000974C1 /* FSLocationAtHomePickerTF.m */; };
+		A44499E7201F3916000974C1 /* FSLocationAtShopPickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = A44499E6201F3916000974C1 /* FSLocationAtShopPickerTF.m */; };
 		A4794BB81FE7DE1000ED9F33 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4794BB71FE7DE1000ED9F33 /* Default-568h@2x.png */; };
 		A4794BCD1FE7DE5600ED9F33 /* LocationAtHome+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A4794BBA1FE7DE5600ED9F33 /* LocationAtHome+CoreDataClass.m */; };
 		A4794BCE1FE7DE5600ED9F33 /* LocationAtHome+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A4794BBC1FE7DE5600ED9F33 /* LocationAtHome+CoreDataProperties.m */; };
@@ -78,6 +82,14 @@
 		A427648B201A035800A0AC28 /* FSLocationAtHomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FSLocationAtHomeVC.m; path = Business/VCs/FSLocationAtHomeVC.m; sourceTree = "<group>"; };
 		A427648D201A03AE00A0AC28 /* FSLocationAtShopVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FSLocationAtShopVC.h; path = Business/VCs/FSLocationAtShopVC.h; sourceTree = "<group>"; };
 		A427648E201A03AE00A0AC28 /* FSLocationAtShopVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FSLocationAtShopVC.m; path = Business/VCs/FSLocationAtShopVC.m; sourceTree = "<group>"; };
+		A44499D0201F007E000974C1 /* FSCoreDataPickerTF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FSCoreDataPickerTF.h; path = CoreData/FSCoreDataPickerTF.h; sourceTree = "<group>"; };
+		A44499D1201F007E000974C1 /* FSCoreDataPickerTF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FSCoreDataPickerTF.m; path = CoreData/FSCoreDataPickerTF.m; sourceTree = "<group>"; };
+		A44499DF201F1BEE000974C1 /* FSUnitPickerTF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FSUnitPickerTF.h; path = Business/Views/PickerView/FSUnitPickerTF.h; sourceTree = "<group>"; };
+		A44499E0201F1BEE000974C1 /* FSUnitPickerTF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FSUnitPickerTF.m; path = Business/Views/PickerView/FSUnitPickerTF.m; sourceTree = "<group>"; };
+		A44499E2201F38F0000974C1 /* FSLocationAtHomePickerTF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FSLocationAtHomePickerTF.h; path = Business/Views/PickerView/FSLocationAtHomePickerTF.h; sourceTree = "<group>"; };
+		A44499E3201F38F0000974C1 /* FSLocationAtHomePickerTF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FSLocationAtHomePickerTF.m; path = Business/Views/PickerView/FSLocationAtHomePickerTF.m; sourceTree = "<group>"; };
+		A44499E5201F3916000974C1 /* FSLocationAtShopPickerTF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FSLocationAtShopPickerTF.h; path = Business/Views/PickerView/FSLocationAtShopPickerTF.h; sourceTree = "<group>"; };
+		A44499E6201F3916000974C1 /* FSLocationAtShopPickerTF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FSLocationAtShopPickerTF.m; path = Business/Views/PickerView/FSLocationAtShopPickerTF.m; sourceTree = "<group>"; };
 		A4794BB71FE7DE1000ED9F33 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A4794BB91FE7DE5600ED9F33 /* LocationAtHome+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocationAtHome+CoreDataClass.h"; sourceTree = "<group>"; };
 		A4794BBA1FE7DE5600ED9F33 /* LocationAtHome+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LocationAtHome+CoreDataClass.m"; sourceTree = "<group>"; };
@@ -188,6 +200,27 @@
 			name = VCs;
 			sourceTree = "<group>";
 		};
+		A44499DA201F17F3000974C1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A44499DB201F17FD000974C1 /* PickerView */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A44499DB201F17FD000974C1 /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				A44499DF201F1BEE000974C1 /* FSUnitPickerTF.h */,
+				A44499E0201F1BEE000974C1 /* FSUnitPickerTF.m */,
+				A44499E2201F38F0000974C1 /* FSLocationAtHomePickerTF.h */,
+				A44499E3201F38F0000974C1 /* FSLocationAtHomePickerTF.m */,
+				A44499E5201F3916000974C1 /* FSLocationAtShopPickerTF.h */,
+				A44499E6201F3916000974C1 /* FSLocationAtShopPickerTF.m */,
+			);
+			name = PickerView;
+			sourceTree = "<group>";
+		};
 		A4B1F6D5201078F900039612 /* SubTabVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +315,8 @@
 				A4D6C7F81FD67FD30066251F /* FSCoreDataHelper.m */,
 				A4794BD71FE7E37F00ED9F33 /* FSCoreDataTVC.h */,
 				A4794BD81FE7E37F00ED9F33 /* FSCoreDataTVC.m */,
+				A44499D0201F007E000974C1 /* FSCoreDataPickerTF.h */,
+				A44499D1201F007E000974C1 /* FSCoreDataPickerTF.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -327,6 +362,7 @@
 		A4D6C8351FD7F5660066251F /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				A44499DA201F17F3000974C1 /* Views */,
 				A427647320174AD800A0AC28 /* VCs */,
 				A4B1F6D5201078F900039612 /* SubTabVC */,
 				A4D6C8361FD7F58B0066251F /* MainView */,
@@ -552,6 +588,8 @@
 				A4794BCD1FE7DE5600ED9F33 /* LocationAtHome+CoreDataClass.m in Sources */,
 				A4794BD11FE7DE5600ED9F33 /* Item+CoreDataClass.m in Sources */,
 				A4794BCF1FE7DE5600ED9F33 /* Location+CoreDataClass.m in Sources */,
+				A44499E1201F1BEE000974C1 /* FSUnitPickerTF.m in Sources */,
+				A44499E7201F3916000974C1 /* FSLocationAtShopPickerTF.m in Sources */,
 				A4794BD31FE7DE5600ED9F33 /* LocationAtShop+CoreDataClass.m in Sources */,
 				A4B1F6D820107A2500039612 /* FSPrepareTVC.m in Sources */,
 				A427647620174C9C00A0AC28 /* FSItemVC.m in Sources */,
@@ -568,7 +606,9 @@
 				A4D6C7F91FD67FD30066251F /* FSCoreDataHelper.m in Sources */,
 				A4D6C7C51FD67C9D0066251F /* AppDelegate.m in Sources */,
 				A4D6C7C21FD67C9D0066251F /* main.m in Sources */,
+				A44499E4201F38F0000974C1 /* FSLocationAtHomePickerTF.m in Sources */,
 				A4D6C80A1FD7D06C0066251F /* Model.xcdatamodeld in Sources */,
+				A44499D2201F007E000974C1 /* FSCoreDataPickerTF.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

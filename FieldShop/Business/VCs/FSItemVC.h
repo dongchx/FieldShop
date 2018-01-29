@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FSCoreDataHelper.h"
 
-@interface FSItemVC : UIViewController <UITextFieldDelegate>
+@interface FSItemVC : UIViewController
 
 @property (nonatomic, strong) NSManagedObjectID *selectedItemID;
 

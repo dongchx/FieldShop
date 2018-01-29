@@ -10,13 +10,21 @@
 #import <Masonry.h>
 #import "AppDelegate.h"
 #import "Item+CoreDataClass.h"
+#import "Unit+CoreDataClass.h"
 #import "LocationAtHome+CoreDataClass.h"
 #import "LocationAtShop+CoreDataClass.h"
 #import "FSUnitTVC.h"
 #import "FSLocationsAtHomeTVC.h"
 #import "FSLocationAtShopTVC.h"
+#import "FSUnitPickerTF.h"
+#import "FSLocationAtHomePickerTF.h"
+#import "FSLocationAtShopPickerTF.h"
 
 @interface FSItemVC ()
+<
+UITextFieldDelegate,
+FSCoreDataPickerTFDelegate
+>
 
 @property (nonatomic, strong) UITextField *nameTF;
 @property (nonatomic, strong) UITextField *quantityTF;
@@ -24,6 +32,10 @@
 @property (nonatomic, strong) UIButton  *addUnit;
 @property (nonatomic, strong) UIButton  *addHomeLocation;
 @property (nonatomic, strong) UIButton  *addShopLocation;
+@property (nonatomic, strong) FSUnitPickerTF *unitPickerTF;
+@property (nonatomic, strong) FSLocationAtHomePickerTF *homePickerTF;
+@property (nonatomic, strong) FSLocationAtShopPickerTF *shopPickerTF;
+@property (nonatomic, strong) UITextField *activeField;
 
 @end
 
@@ -52,6 +64,8 @@
         self.nameTF.text = @"";
         [self.nameTF becomeFirstResponder];
     }
+    
+    [self registerNotifications];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -64,6 +78,8 @@
     FSCoreDataHelper *cdh =
     [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
     [cdh saveContext];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)refreshInterface
@@ -77,7 +93,25 @@
         
         self.nameTF.text = item.name;
         self.quantityTF.text = item.quantity.stringValue;
+        self.unitPickerTF.text = item.unit.name;
+        self.unitPickerTF.selectedObjectID = item.unit.objectID;
+        self.homePickerTF.text = item.locationAtHome.storedIn;
+        self.homePickerTF.selectedObjectID = item.locationAtHome.objectID;
+        self.shopPickerTF.text = item.locationAtShop.aisle;
+        self.shopPickerTF.selectedObjectID = item.locationAtShop.objectID;
     }
+}
+
+- (void)registerNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidShow:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
 }
 
 #pragma mark - subviews
@@ -131,6 +165,7 @@
     }];
     
     [self setupButtons:scrollView];
+    [self setupPickers:scrollView];
 }
 
 - (void)setupButtons:(UIView *)parentView
@@ -179,6 +214,42 @@
     _addHomeLocation.backgroundColor = [UIColor lightGrayColor];
 }
 
+- (void)setupPickers:(UIView *)parentView
+{
+    _unitPickerTF = [[FSUnitPickerTF alloc] initWithFrame:CGRectZero];
+    [parentView addSubview:_unitPickerTF];
+    [self setupPickerTF:_unitPickerTF];
+    _unitPickerTF.placeholder = @"Unit";
+    
+    _homePickerTF = [[FSLocationAtHomePickerTF alloc] initWithFrame:CGRectZero];
+    [parentView addSubview:_homePickerTF];
+    [self setupPickerTF:_homePickerTF];
+    _homePickerTF.placeholder = @"Location at Home";
+    
+    _shopPickerTF = [[FSLocationAtShopPickerTF alloc] initWithFrame:CGRectZero];
+    [parentView addSubview:_shopPickerTF];
+    [self setupPickerTF:_shopPickerTF];
+    _shopPickerTF.placeholder = @"Location at Shop";
+    
+    [_unitPickerTF mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_quantityTF);
+        make.left.equalTo(_quantityTF.mas_right).offset(6.);
+        make.right.equalTo(_addUnit.mas_left).offset(-6.);
+        make.height.mas_equalTo(48.);
+    }];
+    
+    [_homePickerTF mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_unitPickerTF.mas_bottom).offset(6.);
+        make.left.right.equalTo(_nameTF);
+        make.height.mas_equalTo(48.);
+    }];
+    
+    [_shopPickerTF mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_homePickerTF.mas_bottom).offset(6.);
+        make.left.right.height.equalTo(_homePickerTF);
+    }];
+}
+
 - (UITextField *)customTextField
 {
     UITextField *textField = [[UITextField alloc] init];
@@ -189,6 +260,18 @@
     textField.backgroundColor = [UIColor lightGrayColor];
     
     return textField;
+}
+
+- (FSCoreDataPickerTF *)setupPickerTF:(FSCoreDataPickerTF *)pickerTF
+{
+    pickerTF.font = [UIFont boldSystemFontOfSize:17.];
+    pickerTF.textAlignment = NSTextAlignmentCenter;
+    pickerTF.borderStyle = UITextBorderStyleLine;
+    pickerTF.backgroundColor = [UIColor lightGrayColor];
+    pickerTF.delegate = self;
+    pickerTF.pickerDelegate = self;
+    
+    return pickerTF;
 }
 
 #pragma mark - interaction
@@ -235,6 +318,34 @@
     [self.navigationController pushViewController:shopTVC animated:YES];
 }
 
+- (void)keyboardDidShow:(NSNotification *)noti
+{
+    FSDebug;
+    CGRect keyboardRect =
+    [[[noti userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    keyboardRect = [self.view convertRect:keyboardRect fromView:nil];
+    CGFloat keyboardTop = keyboardRect.origin.y;
+    
+    CGRect newScrollViewFrame =
+    CGRectMake(0, 0, self.view.bounds.size.width, keyboardTop);
+    newScrollViewFrame.size.height = keyboardTop - self.view.bounds.origin.y;
+    self.scrollView.frame = newScrollViewFrame;
+    
+    [self.scrollView scrollRectToVisible:self.activeField.frame animated:YES];
+}
+
+- (void)keyboardWillHide:(NSNotification *)noti
+{
+    FSDebug;
+    CGRect defaultFrame = CGRectMake(self.scrollView.frame.origin.x,
+                                     self.scrollView.frame.origin.y,
+                                     self.view.frame.size.width,
+                                     self.view.frame.size.height);
+    
+    self.scrollView.frame = defaultFrame;
+    [self.scrollView scrollRectToVisible:self.nameTF.frame animated:YES];
+}
+
 #pragma mark - UITextFieldDelegate
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
@@ -246,6 +357,21 @@
             self.nameTF.text = @"";
         }
     }
+    
+    if (textField == self.unitPickerTF && self.unitPickerTF.picker) {
+        [self.unitPickerTF fetch];
+        [self.unitPickerTF.picker reloadAllComponents];
+    }
+    else if (textField == self.homePickerTF && self.homePickerTF.picker) {
+        [self.homePickerTF fetch];
+        [self.homePickerTF.picker reloadAllComponents];
+    }
+    else if (textField == self.shopPickerTF && self.shopPickerTF.picker) {
+        [self.shopPickerTF fetch];
+        [self.shopPickerTF.picker reloadAllComponents];
+    }
+    
+    self.activeField = textField;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
@@ -266,6 +392,8 @@
     else if (textField == self.quantityTF) {
         item.quantity = @(self.quantityTF.text.floatValue);
     }
+    
+    self.activeField = nil;
 }
 
 #pragma mark - data
@@ -343,6 +471,77 @@
         }
     }
     
+}
+
+#pragma mark - pickers
+
+- (void)selectedObjectID:(NSManagedObjectID *)objectID
+      changedForPickerTF:(FSCoreDataPickerTF *)pickedTF
+{
+    FSDebug;
+    
+    if (self.selectedItemID) {
+        FSCoreDataHelper *cdh =
+        [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+        Item *item = (Item *)[cdh.context existingObjectWithID:self.selectedItemID
+                                                         error:nil];
+        
+        NSError *error = nil;
+        if (pickedTF == self.unitPickerTF) {
+            Unit *unit = (Unit *)[cdh.context existingObjectWithID:objectID
+                                                             error:&error];
+            item.unit = unit;
+            self.unitPickerTF.text = item.unit.name;
+        }
+        else if (pickedTF == self.homePickerTF) {
+            LocationAtHome *locationAtHome =
+            (LocationAtHome *)[cdh.context existingObjectWithID:objectID
+                                                          error:&error];
+            item.locationAtHome = locationAtHome;
+            self.homePickerTF.text = item.locationAtHome.storedIn;
+        }
+        else if (pickedTF == self.shopPickerTF) {
+            LocationAtShop *locationAtShop =
+            (LocationAtShop *)[cdh.context existingObjectWithID:objectID
+                                                          error:&error];
+            item.locationAtShop = locationAtShop;
+            self.shopPickerTF.text = item.locationAtShop.aisle;
+        }
+        
+        [self refreshInterface];
+        
+        if (error) {
+            FSLog(@"Error selecting object on picker: %@, %@",
+                  error, error.localizedDescription);
+        }
+    }
+}
+
+- (void)selectedObjectClearedForPickerTF:(FSCoreDataPickerTF *)pickerTF
+{
+    FSDebug;
+    
+    if (self.selectedItemID) {
+        FSCoreDataHelper *cdh =
+        [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+        Item *item = (Item *)[cdh.context existingObjectWithID:self.selectedItemID
+                                                         error:nil];
+        
+        if (pickerTF == self.unitPickerTF) {
+            item.unit = nil;
+            self.unitPickerTF.text = @"";
+        }
+        else if (pickerTF == self.homePickerTF) {
+            item.locationAtHome = nil;
+            self.homePickerTF.text = @"";
+        }
+        else if (pickerTF == self.shopPickerTF) {
+            item.locationAtShop = nil;
+            self.shopPickerTF.text = @"";
+        }
+        
+        [self refreshInterface];
+    }
 }
 
 @end
