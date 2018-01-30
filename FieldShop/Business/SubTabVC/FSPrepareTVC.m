@@ -38,27 +38,6 @@
     [self setupSubviews:self.view];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    FSDebug;
-    [super viewWillAppear:animated];
-    self.tabBarController.tabBar.hidden = NO;
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    FSDebug;
-    [super viewDidAppear:animated];
-    self.tabBarController.tabBar.hidden = NO;
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    FSDebug;
-    [super viewWillDisappear:animated];
-    self.tabBarController.tabBar.hidden = YES;
-}
-
 #pragma mark - subviews
 
 - (void)setupSubviews:(UIView *)parentView
@@ -76,7 +55,6 @@
                                                   target:self
                                                   action:@selector(add:)];
     self.navigationItem.rightBarButtonItem = rightButton;
-    
 }
 
 #pragma mark - data
@@ -191,6 +169,7 @@
         FSLog(@"Counldn't obtain a permanent ID for object %@",error);
     }
     itemVC.selectedItemID = newItem.objectID;
+    itemVC.hidesBottomBarWhenPushed = YES;
     
     [self.navigationController pushViewController:itemVC animated:YES];
 }
@@ -290,6 +269,7 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
     
     FSItemVC *itemVC = [[FSItemVC alloc] init];
     itemVC.selectedItemID = [[self.frc objectAtIndexPath:indexPath] objectID];
+    itemVC.hidesBottomBarWhenPushed = YES;
     
     [self.navigationController pushViewController:itemVC animated:YES];
 }

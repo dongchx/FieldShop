@@ -7,7 +7,13 @@
 //
 
 #import "FSCoreDataHelper.h"
+#import "FSCoreDataImporter.h"
 
+#define kFSCDHDefaultDataImportedKey @"DefaultDataImported"
+
+@interface FSCoreDataHelper ()
+@property (nonatomic, strong) UIAlertView *importAlertView;
+@end
 
 @implementation FSCoreDataHelper
 
@@ -63,7 +69,7 @@ NSString *storeFilename = @"Field-Shop.sqlite";
 
 - (instancetype)init
 {
-    FSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    FSDebug;
     
     if (self = [super init]) {
         _model = [NSManagedObjectModel mergedModelFromBundles:nil];
@@ -73,6 +79,13 @@ NSString *storeFilename = @"Field-Shop.sqlite";
         _context =
         [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
         [_context setPersistentStoreCoordinator:_coordinator];
+        
+        _importContext =
+        [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        [_importContext performBlockAndWait:^{
+            [_importContext setPersistentStoreCoordinator:_coordinator];
+            [_importContext setUndoManager:nil];
+        }];
     }
     
     return self;
@@ -116,9 +129,10 @@ NSString *storeFilename = @"Field-Shop.sqlite";
 
 - (void)setupCoreData
 {
-    FSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    FSDebug;
     
     [self loadStore];
+    [self checkIfDefaultDataNeedsImporting];
 }
 
 #pragma mark - SAVING
@@ -427,6 +441,204 @@ NSString *storeFilename = @"Field-Shop.sqlite";
             }
         }
     }
+}
+
+#pragma mark - DATA IMPORT
+
+- (BOOL)isDefaultDataAlreadyImportedForStoredWithURL:(NSURL *)url
+                                              ofType:(NSString *)type
+{
+    FSDebug;
+    
+    NSError *error;
+    NSDictionary *dictionary =
+    [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:type
+                                                               URL:url
+                                                             error:&error];
+    
+    if (error) {
+        FSLog(@"Error reading persistent store metadata : %@",
+              error.localizedDescription);
+    }
+    else {
+        NSNumber *defaultDataAlreadyImported =
+        [dictionary objectForKey:kFSCDHDefaultDataImportedKey];
+        if (![defaultDataAlreadyImported boolValue]) {
+            FSLog(@"Default Data has NOT already been imported");
+            return NO;
+        }
+    }
+    
+    FSLog(@"Default Data has already been imported");
+    return YES;
+}
+
+- (void)checkIfDefaultDataNeedsImporting
+{
+    FSDebug;
+    
+    if (![self isDefaultDataAlreadyImportedForStoredWithURL:[self storeURL]
+                                                     ofType:NSSQLiteStoreType]) {
+        self.importAlertView =
+        [[UIAlertView alloc] initWithTitle:@"Import Default Data?"
+                                   message:@"..."
+                                  delegate:self
+                         cancelButtonTitle:@"cancel"
+                         otherButtonTitles:@"Import", nil];
+        
+        [self.importAlertView show];
+    }
+}
+
+- (void)importFromXML:(NSURL *)url
+{
+    FSDebug;
+    
+    self.parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    self.parser.delegate = self;
+    
+    NSLog(@"**** START PARSE OF %@", url.path);
+    [self.parser parse];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kFSSomethingChangedNotification
+                                                        object:nil];
+    NSLog(@"**** END PARSE OF %@", url.path);
+}
+
+- (void)setDefaultDataAsImportedForStore:(NSPersistentStore *)aStore
+{
+    FSDebug;
+    
+    NSMutableDictionary *dictionary =
+    [NSMutableDictionary dictionaryWithDictionary:[[aStore metadata] copy]];
+    
+    FSLog(@"__Store Metadata Before changes__ \n %@", dictionary);
+    
+    [dictionary setObject:@(YES) forKey:kFSCDHDefaultDataImportedKey];
+    [self.coordinator setMetadata:dictionary forPersistentStore:aStore];
+    
+    FSLog(@"__Store Metadata After changes__ \n %@", dictionary);
+}
+
+#pragma mark - UIAlertView Delegate
+
+- (void)    alertView:(UIAlertView *)alertView
+ clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    FSDebug;
+    
+    if (alertView == self.importAlertView) {
+        if (buttonIndex == 1) {
+            NSLog(@"Default Data Import Approved by User");
+            [_importContext performBlock:^{
+                [self importFromXML:[[NSBundle mainBundle] URLForResource:@"DefaultData"
+                                                            withExtension:@"xml"]];
+            }];
+        }
+        else {
+            NSLog(@"Default Data Import Cancelled by User");
+        }
+        
+        [self setDefaultDataAsImportedForStore:_store];
+    }
+}
+
+#pragma mark - Unique Attribute Selection
+
+- (NSDictionary *)selectedUniqueAttributes
+{
+    FSDebug;
+    
+    NSMutableArray *entities    = [NSMutableArray array];
+    NSMutableArray *attributes  = [NSMutableArray array];
+    
+    [entities addObject:@"Item"];
+    [attributes addObject:@"name"];
+    
+    [entities addObject:@"Unit"];
+    [attributes addObject:@"name"];
+    
+    [entities addObject:@"LocationAtHome"];
+    [attributes addObject:@"storedIn"];
+    
+    [entities addObject:@"LocationAtShop"];
+    [attributes addObject:@"aisle"];
+    
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObjects:attributes
+                                                           forKeys:entities];
+    
+    return dictionary;
+}
+
+#pragma mark - NSXMLParser Delegate
+
+- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError
+{
+    FSDebug;
+}
+
+- (void)    parser:(NSXMLParser *)parser
+   didStartElement:(NSString *)elementName
+      namespaceURI:(NSString *)namespaceURI
+     qualifiedName:(NSString *)qName
+        attributes:(NSDictionary<NSString *,NSString *> *)attributeDict
+{
+    [self.importContext performBlockAndWait:^{
+        if ([elementName isEqualToString:@"item"]) {
+            // prepare the Core Data Importer
+            FSCoreDataImporter *importer =
+            [[FSCoreDataImporter alloc] initWithUniqueAttributes:
+             [self selectedUniqueAttributes]];
+            
+            // insert a unique 'Item' object
+            NSManagedObject *item =
+            [importer insertBasicObjectInTargetEntity:@"Item"
+                                targetEntityAttribute:@"name"
+                                   sourceXMLAttribute:@"name"
+                                        attributeDict:attributeDict
+                                              context:_importContext];
+            
+            // insert a unique 'Unit' object
+            NSManagedObject *unit =
+            [importer insertBasicObjectInTargetEntity:@"Unit"
+                                targetEntityAttribute:@"name"
+                                   sourceXMLAttribute:@"unit"
+                                        attributeDict:attributeDict
+                                              context:_importContext];
+            
+            // insert a unique 'LocationAtHome' object
+            NSManagedObject *locationAtHome =
+            [importer insertBasicObjectInTargetEntity:@"LocationAtHome"
+                                targetEntityAttribute:@"storedIn"
+                                   sourceXMLAttribute:@"locationathome"
+                                        attributeDict:attributeDict
+                                              context:_importContext];
+            
+            // insert a unique 'LocationAtShop' object
+            NSManagedObject *locationAtShop =
+            [importer insertBasicObjectInTargetEntity:@"LocationAtShop"
+                                targetEntityAttribute:@"aisle"
+                                   sourceXMLAttribute:@"locationatshop"
+                                        attributeDict:attributeDict
+                                              context:_importContext];
+            
+            // Manually add extra attribute values
+            [item setValue:@(NO) forKey:@"listed"];
+            
+            // create relationships
+            [item setValue:unit forKey:@"unit"];
+            [item setValue:locationAtHome forKey:@"locationAtHome"];
+            [item setValue:locationAtShop forKey:@"locationAtShop"];
+            
+            // save new object to the persistent store
+            [FSCoreDataImporter saveContext:_importContext];
+            
+            // turn objects into faults to save memory
+            [_importContext refreshObject:item mergeChanges:NO];
+            [_importContext refreshObject:unit mergeChanges:NO];
+            [_importContext refreshObject:locationAtHome mergeChanges:NO];
+            [_importContext refreshObject:locationAtShop mergeChanges:NO];
+        }
+    }];
 }
 
 @end

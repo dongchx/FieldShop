@@ -1,0 +1,402 @@
+<items>
+    <item name="Bubble Bath - Kids" unit="" locationathome="Bathroom" locationatshop="Aisle 6"/>
+    <item name="Cotton Balls" unit="" locationathome="Bathroom" locationatshop="Aisle 6"/>
+    <item name="QV Wash" unit="" locationathome="Bathroom" locationatshop="Aisle 6"/>
+    <item name="Toothbrush - Kids" unit="" locationathome="Bathroom" locationatshop="Aisle 6"/>
+    <item name="Toothpaste - Kids" unit="" locationathome="Bathroom" locationatshop="Aisle 6"/>
+    <item name="Baby Cotton Sticks" unit="pk" locationathome="Bathroom" locationatshop="Aisle 7"/>
+    <item name="Baby Shampoo" unit="" locationathome="Bathroom" locationatshop="Aisle 7"/>
+    <item name="Bathroom Cleaner - Ajax" unit="" locationathome="Bathroom" locationatshop="Aisle 7"/>
+    <item name="Bleach" unit="" locationathome="Bathroom" locationatshop="Aisle 7"/>
+    <item name="BBQ Wipes" unit="" locationathome="BBQ Cupboard" locationatshop="Aisle 8"/>
+    <item name="After Shave" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Cotton Pads" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Dental Floss" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Dental Flosser" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Dental Flosser Heads" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Deodorant - Mens" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Deodorant - Womens" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Dove Facial Wash" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Facial Toner" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Hair Conditioner - Womens" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Hair Shampoo - Mens" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Hair Shampoo - Womens" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Moisturizer - Simple" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Mouth Wash" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Razors - Womens" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Shaving Gel" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Shower Gel" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Shower Loufa" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Soap Refill" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Toothbrush Heads" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Toothpaste" unit="" locationathome="Ensuite" locationatshop="Aisle 6"/>
+    <item name="Air Freshener" unit="" locationathome="Ensuite" locationatshop="Aisle 7"/>
+    <item name="Cotton Sticks" unit="" locationathome="Ensuite" locationatshop="Aisle 7"/>
+    <item name="Dettol" unit="" locationathome="Ensuite" locationatshop="Aisle 7"/>
+    <item name="Nivea Eye Cream" unit="" locationathome="Ensuite" locationatshop="Aisle 7"/>
+    <item name="Tampons" unit="" locationathome="Ensuite" locationatshop="Aisle 7"/>
+    <item name="Toilet Cleaner" unit="" locationathome="Ensuite" locationatshop="Aisle 7"/>
+    <item name="Toilet Fresheners" unit="" locationathome="Ensuite" locationatshop="Aisle 7"/>
+    <item name="Toilet Hygiene Wipes" unit="" locationathome="Ensuite" locationatshop="Aisle 7"/>
+    <item name="Toilet Paper" unit="" locationathome="Ensuite" locationatshop="Aisle 7"/>
+    <item name="Witch Hazel" unit="" locationathome="Ensuite" locationatshop="Aisle 7"/>
+    <item name="Toilet Spray" unit="" locationathome="Ensuite" locationatshop="Aisle 8"/>
+    <item name="Ice Blocks" unit="" locationathome="Freezer" locationatshop="Aisle 1"/>
+    <item name="Chicken Nuggets" unit="" locationathome="Freezer" locationatshop="Aisle 8"/>
+    <item name="Frozen Core Kernels" unit="" locationathome="Freezer" locationatshop="Aisle 8"/>
+    <item name="Frozen Corn Cobs" unit="" locationathome="Freezer" locationatshop="Aisle 8"/>
+    <item name="Frozen Fish" unit="" locationathome="Freezer" locationatshop="Aisle 8"/>
+    <item name="Frozen Spinach" unit="g" locationathome="Freezer" locationatshop="Aisle 8"/>
+    <item name="Hash Browns" unit="" locationathome="Freezer" locationatshop="Aisle 8"/>
+    <item name="Mixed Vegetables" unit="" locationathome="Freezer" locationatshop="Aisle 8"/>
+    <item name="Short Crust Pastry" unit="" locationathome="Freezer" locationatshop="Aisle 8"/>
+    <item name="Bacon + Cheese rolls" unit="" locationathome="Freezer" locationatshop="Bakery"/>
+    <item name="Bread" unit="" locationathome="Freezer" locationatshop="Bakery"/>
+    <item name="Bread Rolls" unit="" locationathome="Freezer" locationatshop="Bakery"/>
+    <item name="Crumpets" unit="" locationathome="Freezer" locationatshop="Bakery"/>
+    <item name="English Muffins" unit="" locationathome="Freezer" locationatshop="Bakery"/>
+    <item name="Hamburger Buns" unit="" locationathome="Freezer" locationatshop="Bakery"/>
+    <item name="Raisin Toast" unit="" locationathome="Freezer" locationatshop="Bakery"/>
+    <item name="Wraps" unit="" locationathome="Freezer" locationatshop="Bakery"/>
+    <item name="Beef Mince" unit="kg" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Beef Strips" unit="g" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Blade Steak" unit="kg" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Chicken Breasts" unit="kg" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Chicken Drumsticks" unit="kg" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Chicken Kebabs" unit="" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Chicken Mince" unit="" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Chicken Schnitzels" unit="" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Corned Beef" unit="kg" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Gravy Beef" unit="kg" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Hamburger Patties" unit="" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Lamb Cutlets" unit="" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Lamb Diced" unit="" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Leg Of Lamb" unit="" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Meat For BBQ" unit="" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Meatballs" unit="" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Rissoles" unit="" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Sausage Mince" unit="g" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Sausages" unit="" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Steak - New York" unit="" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Steak - T-Bone" unit="" locationathome="Freezer" locationatshop="Butcher"/>
+    <item name="Chicken Alfredos" unit="" locationathome="Freezer" locationatshop="Cold Section"/>
+    <item name="Chicken Cordon Bleu" unit="" locationathome="Freezer" locationatshop="Cold Section"/>
+    <item name="Chicken Crackles" unit="" locationathome="Freezer" locationatshop="Cold Section"/>
+    <item name="Corn Fritters" unit="" locationathome="Freezer" locationatshop="Cold Section"/>
+    <item name="Curly Fries" unit="" locationathome="Freezer" locationatshop="Cold Section"/>
+    <item name="Frozen Beans" unit="" locationathome="Freezer" locationatshop="Cold Section"/>
+    <item name="Frozen Dinner" unit="" locationathome="Freezer" locationatshop="Cold Section"/>
+    <item name="Frozen Peas" unit="" locationathome="Freezer" locationatshop="Cold Section"/>
+    <item name="Garlic Slices" unit="" locationathome="Freezer" locationatshop="Cold Section"/>
+    <item name="Ice Cream" unit="" locationathome="Freezer" locationatshop="Cold Section"/>
+    <item name="Lasagna" unit="kg" locationathome="Freezer" locationatshop="Cold Section"/>
+    <item name="Meat Pies" unit="" locationathome="Freezer" locationatshop="Cold Section"/>
+    <item name="Peas, Corn + Carrots" unit="" locationathome="Freezer" locationatshop="Cold Section"/>
+    <item name="Sausage Rolls" unit="" locationathome="Freezer" locationatshop="Cold Section"/>
+    <item name="Spring Rolls" unit="" locationathome="Freezer" locationatshop="Cold Section"/>
+    <item name="Stir Fry Vegetables" unit="" locationathome="Freezer" locationatshop="Cold Section"/>
+    <item name="Turkey Roll" unit="" locationathome="Freezer" locationatshop="Cold Section"/>
+    <item name="Chorizo Sausages" unit="" locationathome="Freezer" locationatshop="Deli"/>
+    <item name="Vodka" unit="" locationathome="Freezer" locationatshop="Liquor"/>
+    <item name="Pizza Bases" unit="" locationathome="Freezer" locationatshop="Produce"/>
+    <item name="Barramundi Fillets" unit="" locationathome="Freezer" locationatshop="Seafood"/>
+    <item name="Fish" unit="g" locationathome="Freezer" locationatshop="Seafood"/>
+    <item name="Prawns" unit="" locationathome="Freezer" locationatshop="Seafood"/>
+    <item name="Apple Sauce" unit="" locationathome="Fridge" locationatshop="Aisle 2"/>
+    <item name="Eggs" unit="pk" locationathome="Fridge" locationatshop="Aisle 2"/>
+    <item name="Garlic" unit="" locationathome="Fridge" locationatshop="Aisle 2"/>
+    <item name="Mustard - French" unit="" locationathome="Fridge" locationatshop="Aisle 2"/>
+    <item name="Mustard - Wholegrain" unit="" locationathome="Fridge" locationatshop="Aisle 2"/>
+    <item name="Rendang Curry Paste" unit="" locationathome="Fridge" locationatshop="Aisle 2"/>
+    <item name="Thai Red Curry Paste" unit="" locationathome="Fridge" locationatshop="Aisle 2"/>
+    <item name="White Chocolate" unit="" locationathome="Fridge" locationatshop="Aisle 2"/>
+    <item name="Juice" unit="" locationathome="Fridge" locationatshop="Aisle 3"/>
+    <item name="Chocolate" unit="" locationathome="Fridge" locationatshop="Aisle 4"/>
+    <item name="Maltesers" unit="" locationathome="Fridge" locationatshop="Aisle 4"/>
+    <item name="Salsa Dip" unit="" locationathome="Fridge" locationatshop="Aisle 4"/>
+    <item name="Soft Drink" unit="" locationathome="Fridge" locationatshop="Aisle 5"/>
+    <item name="Cockatiel Seed" unit="" locationathome="Fridge" locationatshop="Aisle 8"/>
+    <item name="Birthday Cake" unit="" locationathome="Fridge" locationatshop="Bakery"/>
+    <item name="Cheese Sticks" unit="" locationathome="Fridge" locationatshop="Bakery"/>
+    <item name="Cheesymite" unit="" locationathome="Fridge" locationatshop="Bakery"/>
+    <item name="Plum Jam" unit="" locationathome="Fridge" locationatshop="Bakery"/>
+    <item name="Strawberry Jam" unit="" locationathome="Fridge" locationatshop="Bakery"/>
+    <item name="Ham" unit="g" locationathome="Fridge" locationatshop="Butcher"/>
+    <item name="Bacon" unit="g" locationathome="Fridge" locationatshop="Cold Section"/>
+    <item name="Block cheese" unit="" locationathome="Fridge" locationatshop="Cold Section"/>
+    <item name="Butter" unit="" locationathome="Fridge" locationatshop="Cold Section"/>
+    <item name="Camembert Cheese" unit="" locationathome="Fridge" locationatshop="Cold Section"/>
+    <item name="Cannelloni Sheets" unit="" locationathome="Fridge" locationatshop="Cold Section"/>
+    <item name="Cheese - Low Fat Grated" unit="" locationathome="Fridge" locationatshop="Cold Section"/>
+    <item name="Cheese - Sliced" unit="" locationathome="Fridge" locationatshop="Cold Section"/>
+    <item name="Cream Cheese" unit="" locationathome="Fridge" locationatshop="Cold Section"/>
+    <item name="Custard" unit="" locationathome="Fridge" locationatshop="Cold Section"/>
+    <item name="Dip" unit="" locationathome="Fridge" locationatshop="Cold Section"/>
+    <item name="Egg Nog" unit="" locationathome="Fridge" locationatshop="Cold Section"/>
+    <item name="Fresh Cream" unit="ml" locationathome="Fridge" locationatshop="Cold Section"/>
+    <item name="Grated Parmesan" unit="" locationathome="Fridge" locationatshop="Cold Section"/>
+    <item name="Ham In A Packet" unit="" locationathome="Fridge" locationatshop="Cold Section"/>
+    <item name="Margarine" unit="" locationathome="Fridge" locationatshop="Cold Section"/>
+    <item name="Mexican Cheese Mix" unit="" locationathome="Fridge" locationatshop="Cold Section"/>
+    <item name="Milk" unit="L" locationathome="Fridge" locationatshop="Cold Section"/>
+    <item name="Sour Cream" unit="" locationathome="Fridge" locationatshop="Cold Section"/>
+    <item name="Thickened Cream" unit="ml" locationathome="Fridge" locationatshop="Cold Section"/>
+    <item name="Yoghurt" unit="" locationathome="Fridge" locationatshop="Cold Section"/>
+    <item name="Creamy Pasta Salad" unit="" locationathome="Fridge" locationatshop="Deli"/>
+    <item name="Jarlsberg" unit="" locationathome="Fridge" locationatshop="Deli"/>
+    <item name="Nibbles" unit="" locationathome="Fridge" locationatshop="Deli"/>
+    <item name="Pancetta" unit="g" locationathome="Fridge" locationatshop="Deli"/>
+    <item name="Ricotta Cheese" unit="g" locationathome="Fridge" locationatshop="Deli"/>
+    <item name="Sun Dried Capsicum" unit="" locationathome="Fridge" locationatshop="Deli"/>
+    <item name="Sun Dried Tomatoes" unit="" locationathome="Fridge" locationatshop="Deli"/>
+    <item name="Beer" unit="pk" locationathome="Fridge" locationatshop="Liquor"/>
+    <item name="Dry White Wine" unit="" locationathome="Fridge" locationatshop="Liquor"/>
+    <item name="Westcoast Coolers" unit="" locationathome="Fridge" locationatshop="Liquor"/>
+    <item name="White Wine" unit="" locationathome="Fridge" locationatshop="Liquor"/>
+    <item name="Apples" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Avocado" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Baby Corn" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Basil Leaves" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Blueberries" unit="punnet" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Broccoli" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Broccolini" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Capsicum - Green" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Capsicum - Red" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Carrots" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Cauliflower" unit="g" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Cherry Tomatoes" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Cucumber" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Dill" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Grapes" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Lemon" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Lettuce" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Mint Sprigs" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Mushrooms" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Parsley" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Pears" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Pumpkin" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Rock melon" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Smokey BBQ Sauce" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Snow Peas" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="South West Dressing" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Squash" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Steak Sauce" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Strawberries" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Tartate Sauce" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Tomato Sauce" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Tomatoes" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Worcestershire Sauce" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="Zucchini" unit="" locationathome="Fridge" locationatshop="Produce"/>
+    <item name="BBQ Chicken" unit="" locationathome="Fridge" locationatshop="Take Away Shop"/>
+    <item name="Chicken Tenders" unit="" locationathome="Fridge" locationatshop="Take Away Shop"/>
+    <item name="Bananas" unit="" locationathome="Fruit Bowl" locationatshop="Produce"/>
+    <item name="Kiwi Fruit" unit="" locationathome="Fruit Bowl" locationatshop="Produce"/>
+    <item name="Batteries - 9 Volt" unit="" locationathome="Garage" locationatshop="Aisle 1"/>
+    <item name="Batteries - A23" unit="" locationathome="Garage" locationatshop="Aisle 1"/>
+    <item name="Batteries - AA" unit="" locationathome="Garage" locationatshop="Aisle 1"/>
+    <item name="Batteries - AAA" unit="" locationathome="Garage" locationatshop="Aisle 1"/>
+    <item name="Batteries - C" unit="" locationathome="Garage" locationatshop="Aisle 1"/>
+    <item name="Batteries - CR2032" unit="" locationathome="Garage" locationatshop="Aisle 1"/>
+    <item name="Batteries - LR44" unit="" locationathome="Garage" locationatshop="Aisle 1"/>
+    <item name="Light Bulbs" unit="" locationathome="Garage" locationatshop="Aisle 1"/>
+    <item name="Demineralized Water" unit="" locationathome="Garage" locationatshop="Aisle 7"/>
+    <item name="Glue" unit="" locationathome="Garage" locationatshop="Aisle 8"/>
+    <item name="Masking Tape" unit="" locationathome="Garage" locationatshop="Aisle 8"/>
+    <item name="Sandpaper" unit="" locationathome="Garage" locationatshop="Aisle 8"/>
+    <item name="Super Glue" unit="" locationathome="Garage" locationatshop="Aisle 8"/>
+    <item name="Baby Travel Wipes" unit="" locationathome="Kids Bedroom" locationatshop="Aisle 7"/>
+    <item name="Nappies - Infant" unit="" locationathome="Kids Bedroom" locationatshop="Aisle 7"/>
+    <item name="Nappies - Junior" unit="" locationathome="Kids Bedroom" locationatshop="Aisle 7"/>
+    <item name="Nappy Sacks" unit="" locationathome="Kids Bedroom" locationatshop="Aisle 7"/>
+    <item name="Nappy Wipes - Curash" unit="" locationathome="Kids Bedroom" locationatshop="Aisle 7"/>
+    <item name="Sticky Finger Wipes" unit="" locationathome="Kids Bedroom" locationatshop="Aisle 7"/>
+    <item name="Swim Nappies - Large" unit="" locationathome="Kids Bedroom" locationatshop="Aisle 7"/>
+    <item name="Dummies" unit="" locationathome="Kids Bedroom" locationatshop="Chemist"/>
+    <item name="Nappy Rash Cream" unit="" locationathome="Kids Bedroom" locationatshop="Chemist"/>
+    <item name="Freezer Bags" unit="" locationathome="Kitchen Drawer" locationatshop="Aisle 2"/>
+    <item name="Garbage Bags - Medium" unit="" locationathome="Kitchen Drawer" locationatshop="Aisle 8"/>
+    <item name="Cleaning Vinegar" unit="" locationathome="Kitchen Sink Cupboard" locationatshop="Aisle 7"/>
+    <item name="Dishwasher Powder" unit="" locationathome="Kitchen Sink Cupboard" locationatshop="Aisle 7"/>
+    <item name="Dishwashing Liquid" unit="" locationathome="Kitchen Sink Cupboard" locationatshop="Aisle 7"/>
+    <item name="Furniture Polish - Mr Sheen" unit="" locationathome="Kitchen Sink Cupboard" locationatshop="Aisle 7"/>
+    <item name="Kitchen Gloves - Large" unit="" locationathome="Kitchen Sink Cupboard" locationatshop="Aisle 7"/>
+    <item name="Kitchen Gloves - Small" unit="" locationathome="Kitchen Sink Cupboard" locationatshop="Aisle 7"/>
+    <item name="Kitchen Scourers" unit="" locationathome="Kitchen Sink Cupboard" locationatshop="Aisle 7"/>
+    <item name="Kitchen Sponges" unit="" locationathome="Kitchen Sink Cupboard" locationatshop="Aisle 7"/>
+    <item name="Kitchen Spray" unit="" locationathome="Kitchen Sink Cupboard" locationatshop="Aisle 7"/>
+    <item name="Rinse Aid" unit="" locationathome="Kitchen Sink Cupboard" locationatshop="Aisle 7"/>
+    <item name="Windex Refill" unit="" locationathome="Kitchen Sink Cupboard" locationatshop="Aisle 7"/>
+    <item name="Cream Cleaners" unit="" locationathome="Kitchen Sink Cupboard" locationatshop="Aisle 8"/>
+    <item name="Dishwasher Cleaner" unit="" locationathome="Kitchen Sink Cupboard" locationatshop="Aisle 8"/>
+    <item name="Disinfectant" unit="" locationathome="Kitchen Sink Cupboard" locationatshop="Aisle 8"/>
+    <item name="Draino" unit="" locationathome="Kitchen Sink Cupboard" locationatshop="Aisle 8"/>
+    <item name="Kitchen Cleaner" unit="" locationathome="Kitchen Sink Cupboard" locationatshop="Aisle 8"/>
+    <item name="Leather Cleaner" unit="" locationathome="Kitchen Sink Cupboard" locationatshop="Aisle 8"/>
+    <item name="Stainless Steel Cleaner" unit="" locationathome="Kitchen Sink Cupboard" locationatshop="Aisle 8"/>
+    <item name="Steel Wool" unit="" locationathome="Kitchen Sink Cupboard" locationatshop="Aisle 8"/>
+    <item name="Surface Spray" unit="" locationathome="Kitchen Sink Cupboard" locationatshop="Aisle 8"/>
+    <item name="Baby Clothes Washing Liquid - Purity" unit="" locationathome="Laundry" locationatshop="Aisle 7"/>
+    <item name="Fluffy" unit="" locationathome="Laundry" locationatshop="Aisle 7"/>
+    <item name="Napisan" unit="kg" locationathome="Laundry" locationatshop="Aisle 7"/>
+    <item name="Pegs" unit="" locationathome="Laundry" locationatshop="Aisle 7"/>
+    <item name="Stain Remover - Preen" unit="" locationathome="Laundry" locationatshop="Aisle 7"/>
+    <item name="Washing Powder" unit="" locationathome="Laundry" locationatshop="Aisle 7"/>
+    <item name="Wool Mix" unit="" locationathome="Laundry" locationatshop="Aisle 7"/>
+    <item name="Duster" unit="" locationathome="Laundry" locationatshop="Aisle 8"/>
+    <item name="Floor Cleaner" unit="" locationathome="Laundry" locationatshop="Aisle 8"/>
+    <item name="Shoe polish" unit="" locationathome="Laundry" locationatshop="Aisle 8"/>
+    <item name="Bourbon" unit="" locationathome="Liquor Cupboard" locationatshop="Liquor"/>
+    <item name="Red Wine" unit="" locationathome="Liquor Cupboard" locationatshop="Liquor"/>
+    <item name="Breath Mints" unit="" locationathome="Main Bedroom" locationatshop="Aisle 4"/>
+    <item name="Vicks Vapor Rub" unit="" locationathome="Medicine Cabinet" locationatshop="Aisle 6"/>
+    <item name="Baby Vicks" unit="" locationathome="Medicine Cabinet" locationatshop="Aisle 7"/>
+    <item name="Bonjela" unit="" locationathome="Medicine Cabinet" locationatshop="Aisle 7"/>
+    <item name="Glen 20" unit="" locationathome="Medicine Cabinet" locationatshop="Aisle 7"/>
+    <item name="Nail Clippers" unit="" locationathome="Medicine Cabinet" locationatshop="Aisle 7"/>
+    <item name="Sun block" unit="" locationathome="Medicine Cabinet" locationatshop="Aisle 7"/>
+    <item name="Baby Panadol" unit="" locationathome="Medicine Cabinet" locationatshop="Chemist"/>
+    <item name="Demizin" unit="" locationathome="Medicine Cabinet" locationatshop="Chemist"/>
+    <item name="Strepsils" unit="" locationathome="Medicine Cabinet" locationatshop="Chemist"/>
+    <item name="Telfast" unit="" locationathome="Medicine Cabinet" locationatshop="Chemist"/>
+    <item name="Birthday Card" unit="" locationathome="Office" locationatshop="Aisle 3"/>
+    <item name="Wrapping Paper" unit="" locationathome="Office" locationatshop="Aisle 3"/>
+    <item name="Black Texta" unit="" locationathome="Office" locationatshop="Aisle 4"/>
+    <item name="Bluetak" unit="" locationathome="Office" locationatshop="Aisle 4"/>
+    <item name="Envelopes - A4" unit="" locationathome="Office" locationatshop="Aisle 4"/>
+    <item name="Tissues - 3ply" unit="" locationathome="Office" locationatshop="Aisle 7"/>
+    <item name="Tissues - Travel" unit="" locationathome="Office" locationatshop="Aisle 7"/>
+    <item name="Screen Cleaner" unit="" locationathome="Office" locationatshop="Aisle 8"/>
+    <item name="Two Min Beef Noodles" unit="" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Two Min Chicken Noodles" unit="" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Baked Beans" unit="" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Couscous" unit="" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Iced Magic" unit="" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Jelly" unit="" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Mac + Cheese" unit="" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Meatball Sauce" unit="" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Mini Pasta Shells" unit="" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Packet Pasta for 1" unit="" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Pasta Bake Sauce" unit="" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Peaches - Jar" unit="" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Pineapple - Sliced - Large" unit="" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Pudding - Single Serve" unit="" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Rice" unit="" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Simmer Sauce" unit="" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Singapore Noodles" unit="" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Spaghetti" unit="" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Spaghetti - Large" unit=" Tin" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Spaghetti - Small" unit=" Tin" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Spiral Pasta" unit="g" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Stir Fry Sauce" unit="" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Tomato Paste" unit="ml" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Tomato Puree" unit="ml" locationathome="Pantry" locationatshop="Aisle 1"/>
+    <item name="Aluminum Foil" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Bernaise Sauce" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Bread Crumbs" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Brown Sugar" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Cake Mix" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Clip Lock Bags" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Cocoa" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Coconut Cream" unit="ml" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Coconut Milk" unit="ml" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Cookie Mix" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Cooking Spray" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Crushed Unsalted Peanuts" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Desiccated Coconut" unit="pk" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Fish Sauce" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Glad Wrap" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Gravy - Brown Onion" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Gravy - Chicken" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Gravy - Pepper" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Icing Sugar" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Marshmallows" unit="g" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Muffin Mix" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Olive oil" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Palm Sugar" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Paper Towel" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Premium Biscuits" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Self Raising Flour" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Sprinkles" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Stock - Beef" unit="L" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Stock - Chicken" unit="L" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Stock Cubes - Beef" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Stock Cubes - Chicken" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Stock Powder - Beef" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Stock Powder - Chicken" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Stroganoff Mix" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Sultanas" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Sweetener - Sugarine Tablets" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Taco Kit" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Vanilla Pod" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Vegetable Oil" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="White Vinegar" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Yellow Food Coloring" unit="" locationathome="Pantry" locationatshop="Aisle 2"/>
+    <item name="Breakfast Cereal" unit="" locationathome="Pantry" locationatshop="Aisle 3"/>
+    <item name="Carnation Evaporated Milk" unit="ml" locationathome="Pantry" locationatshop="Aisle 3"/>
+    <item name="Coffee" unit="" locationathome="Pantry" locationatshop="Aisle 3"/>
+    <item name="Coffee - Decaffeinated" unit="" locationathome="Pantry" locationatshop="Aisle 3"/>
+    <item name="Coffee - Mocha" unit="" locationathome="Pantry" locationatshop="Aisle 3"/>
+    <item name="Cordial - Apple Raspberry" unit="" locationathome="Pantry" locationatshop="Aisle 3"/>
+    <item name="Cordial - Orange + Mango" unit="" locationathome="Pantry" locationatshop="Aisle 3"/>
+    <item name="Porridge" unit="" locationathome="Pantry" locationatshop="Aisle 3"/>
+    <item name="Tea Bags" unit="" locationathome="Pantry" locationatshop="Aisle 3"/>
+    <item name="Weetbix" unit="" locationathome="Pantry" locationatshop="Aisle 3"/>
+    <item name="Cruskits - Corn" unit="" locationathome="Pantry" locationatshop="Aisle 4"/>
+    <item name="Lollies" unit="" locationathome="Pantry" locationatshop="Aisle 4"/>
+    <item name="Red Licorice" unit="" locationathome="Pantry" locationatshop="Aisle 4"/>
+    <item name="Rice Cakes" unit="" locationathome="Pantry" locationatshop="Aisle 4"/>
+    <item name="Ritz" unit="" locationathome="Pantry" locationatshop="Aisle 4"/>
+    <item name="Serviettes" unit="" locationathome="Pantry" locationatshop="Aisle 4"/>
+    <item name="Soda Water" unit="" locationathome="Pantry" locationatshop="Aisle 4"/>
+    <item name="Unsweetened Apple Juice" unit="" locationathome="Pantry" locationatshop="Aisle 4"/>
+    <item name="Doritos" unit="" locationathome="Pantry" locationatshop="Aisle 5"/>
+    <item name="Fruit Bars" unit="" locationathome="Pantry" locationatshop="Aisle 5"/>
+    <item name="Fruit Sticks" unit="" locationathome="Pantry" locationatshop="Aisle 5"/>
+    <item name="Muesli Bars" unit="" locationathome="Pantry" locationatshop="Aisle 5"/>
+    <item name="Muffin bars" unit="" locationathome="Pantry" locationatshop="Aisle 5"/>
+    <item name="Baby Food" unit="" locationathome="Pantry" locationatshop="Aisle 7"/>
+    <item name="Baby Snacks" unit="" locationathome="Pantry" locationatshop="Aisle 7"/>
+    <item name="Bread Sticks" unit="" locationathome="Pantry" locationatshop="Aisle 7"/>
+    <item name="Teething Rusks" unit="" locationathome="Pantry" locationatshop="Aisle 7"/>
+    <item name="Bake at Home Rolls" unit="" locationathome="Pantry" locationatshop="Bakery"/>
+    <item name="Golden Syrup" unit="" locationathome="Pantry" locationatshop="Bakery"/>
+    <item name="Honey" unit="" locationathome="Pantry" locationatshop="Bakery"/>
+    <item name="Peanut Butter" unit="" locationathome="Pantry" locationatshop="Bakery"/>
+    <item name="Baby Formula" unit=" Tin" locationathome="Pantry" locationatshop="Chemist"/>
+    <item name="Arborio Rice" unit="" locationathome="Pantry" locationatshop="Produce"/>
+    <item name="Balsamic Vinegar" unit="" locationathome="Pantry" locationatshop="Produce"/>
+    <item name="Beetroot" unit=" Tin" locationathome="Pantry" locationatshop="Produce"/>
+    <item name="Chicken Noodle soup Mix" unit="" locationathome="Pantry" locationatshop="Produce"/>
+    <item name="Condensed Cream of Chicken Soup" unit="" locationathome="Pantry" locationatshop="Produce"/>
+    <item name="Corn" unit=" Tin" locationathome="Pantry" locationatshop="Produce"/>
+    <item name="Creamed Corn" unit=" Tin" locationathome="Pantry" locationatshop="Produce"/>
+    <item name="Diced Tomatoes" unit=" Tin" locationathome="Pantry" locationatshop="Produce"/>
+    <item name="French Onion Soup Mix" unit="g" locationathome="Pantry" locationatshop="Produce"/>
+    <item name="Macadamia Nuts" unit="" locationathome="Pantry" locationatshop="Produce"/>
+    <item name="Mayonnaise - Whole Egg" unit="" locationathome="Pantry" locationatshop="Produce"/>
+    <item name="Onions" unit="" locationathome="Pantry" locationatshop="Produce"/>
+    <item name="Potatoes" unit="Kg" locationathome="Pantry" locationatshop="Produce"/>
+    <item name="Potatoes" unit=" Tin" locationathome="Pantry" locationatshop="Produce"/>
+    <item name="Soup" unit="" locationathome="Pantry" locationatshop="Produce"/>
+    <item name="Sweet Potatoes" unit="" locationathome="Pantry" locationatshop="Produce"/>
+    <item name="Tuna" unit="" locationathome="Pantry" locationatshop="Produce"/>
+    <item name="Tuna - Skinless + Boneless John West" unit="" locationathome="Pantry" locationatshop="Produce"/>
+    <item name="Vegemite - Small" unit="" locationathome="Pantry" locationatshop="Produce"/>
+    <item name="Bug Spray" unit="" locationathome="Shed" locationatshop="Aisle 8"/>
+    <item name="Cayenne Pepper" unit="" locationathome="Spice Rack" locationatshop="Aisle 2"/>
+    <item name="Chilli Flakes" unit="" locationathome="Spice Rack" locationatshop="Aisle 2"/>
+    <item name="Cinnamon - Ground" unit="" locationathome="Spice Rack" locationatshop="Aisle 2"/>
+    <item name="Cloves - Ground" unit="" locationathome="Spice Rack" locationatshop="Aisle 2"/>
+    <item name="Cumin Ground" unit="" locationathome="Spice Rack" locationatshop="Aisle 2"/>
+    <item name="Curry Powder" unit="" locationathome="Spice Rack" locationatshop="Aisle 2"/>
+    <item name="Mixed Herbs" unit="" locationathome="Spice Rack" locationatshop="Aisle 2"/>
+    <item name="Moroccan Seasoning" unit="" locationathome="Spice Rack" locationatshop="Aisle 2"/>
+    <item name="Nutmeg" unit="" locationathome="Spice Rack" locationatshop="Aisle 2"/>
+    <item name="Oregano Leaves" unit="" locationathome="Spice Rack" locationatshop="Aisle 2"/>
+    <item name="Paprika" unit="" locationathome="Spice Rack" locationatshop="Aisle 2"/>
+    <item name="Plain Flour" unit="" locationathome="Spice Rack" locationatshop="Aisle 2"/>
+    <item name="Rosemary" unit="" locationathome="Spice Rack" locationatshop="Aisle 2"/>
+    <item name="Tarragon" unit="" locationathome="Spice Rack" locationatshop="Aisle 2"/>
+    <item name="Thyme" unit="" locationathome="Spice Rack" locationatshop="Aisle 2"/>
+    <item name="Chives" unit="" locationathome="Spice Rack" locationatshop="Produce"/>
+</items>

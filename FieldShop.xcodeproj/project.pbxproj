@@ -18,6 +18,8 @@
 		A44499E1201F1BEE000974C1 /* FSUnitPickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = A44499E0201F1BEE000974C1 /* FSUnitPickerTF.m */; };
 		A44499E4201F38F0000974C1 /* FSLocationAtHomePickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = A44499E3201F38F0000974C1 /* FSLocationAtHomePickerTF.m */; };
 		A44499E7201F3916000974C1 /* FSLocationAtShopPickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = A44499E6201F3916000974C1 /* FSLocationAtShopPickerTF.m */; };
+		A44499E92020505B000974C1 /* DefaultData.xml in Resources */ = {isa = PBXBuildFile; fileRef = A44499E82020505B000974C1 /* DefaultData.xml */; };
+		A44499EC20205EDF000974C1 /* FSCoreDataImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = A44499EB20205EDF000974C1 /* FSCoreDataImporter.m */; };
 		A4794BB81FE7DE1000ED9F33 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4794BB71FE7DE1000ED9F33 /* Default-568h@2x.png */; };
 		A4794BCD1FE7DE5600ED9F33 /* LocationAtHome+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A4794BBA1FE7DE5600ED9F33 /* LocationAtHome+CoreDataClass.m */; };
 		A4794BCE1FE7DE5600ED9F33 /* LocationAtHome+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A4794BBC1FE7DE5600ED9F33 /* LocationAtHome+CoreDataProperties.m */; };
@@ -90,6 +92,9 @@
 		A44499E3201F38F0000974C1 /* FSLocationAtHomePickerTF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FSLocationAtHomePickerTF.m; path = Business/Views/PickerView/FSLocationAtHomePickerTF.m; sourceTree = "<group>"; };
 		A44499E5201F3916000974C1 /* FSLocationAtShopPickerTF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FSLocationAtShopPickerTF.h; path = Business/Views/PickerView/FSLocationAtShopPickerTF.h; sourceTree = "<group>"; };
 		A44499E6201F3916000974C1 /* FSLocationAtShopPickerTF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FSLocationAtShopPickerTF.m; path = Business/Views/PickerView/FSLocationAtShopPickerTF.m; sourceTree = "<group>"; };
+		A44499E82020505B000974C1 /* DefaultData.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = DefaultData.xml; path = DataModel/DefaultData.xml; sourceTree = "<group>"; };
+		A44499EA20205EDF000974C1 /* FSCoreDataImporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FSCoreDataImporter.h; path = CoreData/FSCoreDataImporter.h; sourceTree = "<group>"; };
+		A44499EB20205EDF000974C1 /* FSCoreDataImporter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FSCoreDataImporter.m; path = CoreData/FSCoreDataImporter.m; sourceTree = "<group>"; };
 		A4794BB71FE7DE1000ED9F33 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A4794BB91FE7DE5600ED9F33 /* LocationAtHome+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocationAtHome+CoreDataClass.h"; sourceTree = "<group>"; };
 		A4794BBA1FE7DE5600ED9F33 /* LocationAtHome+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LocationAtHome+CoreDataClass.m"; sourceTree = "<group>"; };
@@ -317,6 +322,8 @@
 				A4794BD81FE7E37F00ED9F33 /* FSCoreDataTVC.m */,
 				A44499D0201F007E000974C1 /* FSCoreDataPickerTF.h */,
 				A44499D1201F007E000974C1 /* FSCoreDataPickerTF.m */,
+				A44499EA20205EDF000974C1 /* FSCoreDataImporter.h */,
+				A44499EB20205EDF000974C1 /* FSCoreDataImporter.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -324,6 +331,7 @@
 		A4D6C8041FD793EF0066251F /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				A44499E82020505B000974C1 /* DefaultData.xml */,
 				A4D6C80B1FD7D9000066251F /* ModelClass */,
 				A4D6C8081FD7D06C0066251F /* Model.xcdatamodeld */,
 				A4D6C8491FD92AE10066251F /* Model2ToModel3.xcmappingmodel */,
@@ -502,6 +510,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A44499E92020505B000974C1 /* DefaultData.xml in Resources */,
 				A4D6C7CD1FD67C9D0066251F /* Assets.xcassets in Resources */,
 				A4794BB81FE7DE1000ED9F33 /* Default-568h@2x.png in Resources */,
 			);
@@ -593,6 +602,7 @@
 				A4794BD31FE7DE5600ED9F33 /* LocationAtShop+CoreDataClass.m in Sources */,
 				A4B1F6D820107A2500039612 /* FSPrepareTVC.m in Sources */,
 				A427647620174C9C00A0AC28 /* FSItemVC.m in Sources */,
+				A44499EC20205EDF000974C1 /* FSCoreDataImporter.m in Sources */,
 				A4794BD91FE7E37F00ED9F33 /* FSCoreDataTVC.m in Sources */,
 				A42764862019C47900A0AC28 /* FSLocationsAtHomeTVC.m in Sources */,
 				A42764892019C49D00A0AC28 /* FSLocationAtShopTVC.m in Sources */,
