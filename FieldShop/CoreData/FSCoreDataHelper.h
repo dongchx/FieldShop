@@ -22,6 +22,12 @@
 @property (nonatomic, readonly) UIAlertView                     *importAlertView;
 @property (nonatomic, strong)   NSXMLParser                     *parser;
 
+// source
+@property (nonatomic, readonly) NSManagedObjectContext          *sourceContext;
+@property (nonatomic, readonly) NSPersistentStoreCoordinator    *sourceCoordinator;
+@property (nonatomic, readonly) NSPersistentStore               *sourceStore;
+@property (nonatomic, strong)   NSTimer *importTimer;
+
 - (void)setupCoreData;
 - (void)saveContext;
 

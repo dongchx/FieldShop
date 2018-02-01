@@ -20,6 +20,7 @@
 #pragma mark - FILES
 // 持久化存储区文件名
 NSString *storeFilename = @"Field-Shop.sqlite";
+NSString *sourceStoreFilename = @"DefaultData.sqlite";
 
 #pragma mark - PATHS
 // 持久化存储区文件路径
@@ -65,6 +66,16 @@ NSString *storeFilename = @"Field-Shop.sqlite";
     [[self applicationStoresDirectory] URLByAppendingPathComponent:storeFilename];
 }
 
+- (NSURL *)sourceStoreURL
+{
+    FSDebug;
+    
+    return
+    [NSURL fileURLWithPath:[[NSBundle mainBundle]
+           pathForResource:[sourceStoreFilename stringByDeletingPathExtension]
+                    ofType:[sourceStoreFilename pathExtension]]];
+}
+
 #pragma mark - SETUP
 
 - (instancetype)init
@@ -85,6 +96,15 @@ NSString *storeFilename = @"Field-Shop.sqlite";
         [_importContext performBlockAndWait:^{
             [_importContext setPersistentStoreCoordinator:_coordinator];
             [_importContext setUndoManager:nil];
+        }];
+        
+        _sourceCoordinator =
+        [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_model];
+        _sourceContext =
+        [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        [_sourceContext performBlockAndWait:^{
+            [_sourceContext setPersistentStoreCoordinator:_sourceCoordinator];
+            [_sourceContext setUndoManager:nil];
         }];
     }
     
@@ -108,7 +128,7 @@ NSString *storeFilename = @"Field-Shop.sqlite";
         @{
           NSMigratePersistentStoresAutomaticallyOption : @YES,
           NSInferMappingModelAutomaticallyOption       : @YES,
-          NSSQLitePragmasOption : @{@"journal_mode" : @"DELETE"},
+//          NSSQLitePragmasOption : @{@"journal_mode" : @"DELETE"},
           };
         
         NSError *error = nil;
@@ -124,6 +144,34 @@ NSString *storeFilename = @"Field-Shop.sqlite";
         else {
             FSLog(@"Failed to add store! Error: %@", error);
         }
+    }
+}
+
+- (void)loadSourceStore
+{
+    FSDebug;
+    
+    if (_sourceStore) { return; }
+    
+    NSDictionary *options =
+  @{
+    NSReadOnlyPersistentStoreOption : @YES
+    };
+
+    NSError *error = nil;
+    _sourceStore =
+    [_sourceCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                     configuration:nil
+                                               URL:[self sourceStoreURL]
+                                           options:options
+                                             error:&error];
+    
+    if (!_sourceStore) {
+        FSLog(@"Failed to add source store. Error: %@", error);
+        abort();
+    }
+    else {
+        FSLog(@"Successfully added source store : %@", _sourceStore);
     }
 }
 
@@ -519,6 +567,40 @@ NSString *storeFilename = @"Field-Shop.sqlite";
     FSLog(@"__Store Metadata After changes__ \n %@", dictionary);
 }
 
+- (void)deepCopyFromPersistentStore:(NSURL *)url
+{
+    FSDebug;
+    
+    _importTimer =
+    [NSTimer scheduledTimerWithTimeInterval:2.
+                                     target:self
+                                   selector:@selector(somethingChanged)
+                                   userInfo:nil
+                                    repeats:YES];
+    
+    [_sourceContext performBlock:^{
+        FSLog(@"*** STARTED DEEP COPY FROM DEFAULT DATA PERSISTENT STORE ***");
+        
+        NSArray *entitiesToCopy =
+        @[@"LocationAtHome", @"LocationAtShop", @"Unit", @"Item"];
+        
+        FSCoreDataImporter *importer =
+        [[FSCoreDataImporter alloc] initWithUniqueAttributes:
+         [self selectedUniqueAttributes]];
+        
+        [importer deepCopyEntities:entitiesToCopy
+                       fromContext:_sourceContext
+                         toContext:_importContext];
+        
+        [_context performBlock:^{
+            [_importTimer invalidate];
+            [self somethingChanged];
+        }];
+        
+        FSLog(@"*** FINISHED DEEP COPY FROM DEFAULT DATA PERSISTENT STORE ***");
+    }];
+}
+
 #pragma mark - UIAlertView Delegate
 
 - (void)    alertView:(UIAlertView *)alertView
@@ -529,10 +611,18 @@ NSString *storeFilename = @"Field-Shop.sqlite";
     if (alertView == self.importAlertView) {
         if (buttonIndex == 1) {
             NSLog(@"Default Data Import Approved by User");
+            
+            /*
+            // XML Import
             [_importContext performBlock:^{
                 [self importFromXML:[[NSBundle mainBundle] URLForResource:@"DefaultData"
                                                             withExtension:@"xml"]];
             }];
+             */
+            
+            // Deep Copy
+            [self loadSourceStore];
+            [self deepCopyFromPersistentStore:[self sourceStoreURL]];
         }
         else {
             NSLog(@"Default Data Import Cancelled by User");
@@ -639,6 +729,15 @@ NSString *storeFilename = @"Field-Shop.sqlite";
             [_importContext refreshObject:locationAtShop mergeChanges:NO];
         }
     }];
+}
+
+#pragma mark - UNDERLYING DATA CHANGE NOTIFICATION
+
+- (void)somethingChanged
+{
+    FSDebug;
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:kFSSomethingChangedNotification object:nil];
 }
 
 @end

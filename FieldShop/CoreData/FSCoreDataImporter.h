@@ -28,4 +28,8 @@
                                        attributeDict:(NSDictionary *)attributeDict
                                              context:(NSManagedObjectContext *)context;
 
+- (void)deepCopyEntities:(NSArray *)entities
+             fromContext:(NSManagedObjectContext *)sourceContext
+               toContext:(NSManagedObjectContext *)targetContext;
+
 @end
