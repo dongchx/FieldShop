@@ -19,11 +19,14 @@
 #import "FSUnitPickerTF.h"
 #import "FSLocationAtHomePickerTF.h"
 #import "FSLocationAtShopPickerTF.h"
+#import "Item_Photo+CoreDataClass.h"
 
 @interface FSItemVC ()
 <
 UITextFieldDelegate,
-FSCoreDataPickerTFDelegate
+FSCoreDataPickerTFDelegate,
+UIImagePickerControllerDelegate,
+UINavigationControllerDelegate
 >
 
 @property (nonatomic, strong) UITextField *nameTF;
@@ -32,10 +35,14 @@ FSCoreDataPickerTFDelegate
 @property (nonatomic, strong) UIButton  *addUnit;
 @property (nonatomic, strong) UIButton  *addHomeLocation;
 @property (nonatomic, strong) UIButton  *addShopLocation;
+@property (nonatomic, strong) UIButton  *addImage;
+@property (nonatomic, strong) UIImageView   *imageView;
 @property (nonatomic, strong) FSUnitPickerTF *unitPickerTF;
 @property (nonatomic, strong) FSLocationAtHomePickerTF *homePickerTF;
 @property (nonatomic, strong) FSLocationAtShopPickerTF *shopPickerTF;
 @property (nonatomic, strong) UITextField *activeField;
+
+@property (nonatomic, strong) UIImagePickerController *camera;
 
 @end
 
@@ -80,6 +87,19 @@ FSCoreDataPickerTFDelegate
     [cdh saveContext];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    NSError *error = nil;
+    Item *item =
+    (Item *)[cdh.context existingObjectWithID:self.selectedItemID
+                                        error:&error];
+    
+    if (error) {
+        FSLog(@"ERROR!!! --> %@", error.localizedDescription);
+    }
+    else {
+        [cdh.context refreshObject:item.photo mergeChanges:NO];
+        [cdh.context refreshObject:item mergeChanges:NO];
+    }
 }
 
 - (void)refreshInterface
@@ -99,6 +119,8 @@ FSCoreDataPickerTFDelegate
         self.homePickerTF.selectedObjectID = item.locationAtHome.objectID;
         self.shopPickerTF.text = item.locationAtShop.aisle;
         self.shopPickerTF.selectedObjectID = item.locationAtShop.objectID;
+        self.imageView.image = [UIImage imageWithData:item.photo.data];
+        [self checkCamera];
     }
 }
 
@@ -166,6 +188,16 @@ FSCoreDataPickerTFDelegate
     
     [self setupButtons:scrollView];
     [self setupPickers:scrollView];
+    
+    _imageView = [[UIImageView alloc] init];
+    [parentView addSubview:_imageView];
+    _imageView.backgroundColor = [UIColor lightGrayColor];
+    
+    [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_shopPickerTF.mas_bottom).offset(6.);
+        make.left.width.equalTo(_shopPickerTF);
+        make.height.equalTo(_imageView.mas_width);
+    }];
 }
 
 - (void)setupButtons:(UIView *)parentView
@@ -191,6 +223,13 @@ FSCoreDataPickerTFDelegate
                          action:@selector(handleAddShopLocation:)
                forControlEvents:UIControlEventTouchUpInside];
     
+    _addImage = [UIButton buttonWithType:UIButtonTypeCustom];
+    [parentView addSubview:_addImage];
+    [_addImage setTitle:@"Img" forState:UIControlStateNormal];
+    [_addImage addTarget:self
+                  action:@selector(showCamera:)
+        forControlEvents:UIControlEventTouchUpInside];
+    
     //
     //
     [_addUnit mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -209,9 +248,15 @@ FSCoreDataPickerTFDelegate
         make.right.width.height.equalTo(_addHomeLocation);
     }];
     
+    [_addImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_addShopLocation.mas_bottom).offset(6);
+        make.right.width.height.equalTo(_addShopLocation);
+    }];
+    
     _addUnit.backgroundColor = [UIColor lightGrayColor];
     _addShopLocation.backgroundColor = [UIColor lightGrayColor];
     _addHomeLocation.backgroundColor = [UIColor lightGrayColor];
+    _addImage.backgroundColor = [UIColor lightGrayColor];
 }
 
 - (void)setupPickers:(UIView *)parentView
@@ -240,7 +285,8 @@ FSCoreDataPickerTFDelegate
     
     [_homePickerTF mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_unitPickerTF.mas_bottom).offset(6.);
-        make.left.right.equalTo(_nameTF);
+        make.left.equalTo(_quantityTF);
+        make.right.equalTo(_unitPickerTF);
         make.height.mas_equalTo(48.);
     }];
     
@@ -542,6 +588,71 @@ FSCoreDataPickerTFDelegate
         
         [self refreshInterface];
     }
+}
+
+#pragma mark - CAMERA
+
+- (void)checkCamera
+{
+    FSDebug;
+    self.addImage.enabled =
+    [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
+}
+
+- (void)showCamera:(id)sender
+{
+    FSDebug;
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        FSLog(@"Camera is available");
+        _camera = [[UIImagePickerController alloc] init];
+        _camera.sourceType = UIImagePickerControllerSourceTypeCamera;
+        _camera.mediaTypes =
+        [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+        _camera.allowsEditing = YES;
+        _camera.delegate = self;
+        [self.navigationController presentViewController:_camera
+                                                animated:YES
+                                              completion:nil];
+    }
+    else {
+        FSLog(@"Camera not avaliable");
+    }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    FSDebug;
+    
+    FSCoreDataHelper *cdh =
+    [(AppDelegate *) [[UIApplication sharedApplication] delegate] cdh];
+    
+    Item *item =
+    (Item *)[cdh.context existingObjectWithID:self.selectedItemID error:nil];
+    
+    UIImage *photo =
+    (UIImage *)[info objectForKey:UIImagePickerControllerEditedImage];
+    
+    FSLog(@"Captured %f x %f photo", photo.size.width, photo.size.height);
+    
+    if (!item.photo) {
+        Item_Photo *newPhoto =
+        [NSEntityDescription insertNewObjectForEntityForName:@"Item_Photo"
+                                      inManagedObjectContext:cdh.context];
+        item.photo = newPhoto;
+    }
+    item.photo.data = UIImageJPEGRepresentation(photo, 0.5);
+    
+    self.imageView.image = photo;
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    FSDebug;
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

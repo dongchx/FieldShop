@@ -1,9 +1,8 @@
 //
 //  Item+CoreDataProperties.m
-//  FieldShop
+//  
 //
-//  Created by dongchx on 18/12/2017.
-//  Copyright © 2017 dongchx. All rights reserved.
+//  Created by dongchx on 05/02/2018.
 //
 //
 
@@ -18,10 +17,11 @@
 @dynamic collected;
 @dynamic listed;
 @dynamic name;
-@dynamic photoData;
 @dynamic quantity;
+@dynamic thumbnail;
 @dynamic locationAtHome;
 @dynamic locationAtShop;
 @dynamic unit;
+@dynamic photo;
 
 @end

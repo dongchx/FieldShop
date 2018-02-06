@@ -1,16 +1,15 @@
 //
 //  Item+CoreDataClass.h
-//  FieldShop
+//  
 //
-//  Created by dongchx on 18/12/2017.
-//  Copyright © 2017 dongchx. All rights reserved.
+//  Created by dongchx on 05/02/2018.
 //
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class LocationAtHome, LocationAtShop, Unit;
+@class Item_Photo, LocationAtHome, LocationAtShop, Unit;
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -152,6 +152,8 @@
         cell.accessoryType = UITableViewCellAccessoryDetailButton;
     }
     
+    cell.imageView.image = [UIImage imageWithData:item.thumbnail];
+    
     return cell;
 }
 

@@ -189,6 +189,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:cellReuseId];
+        
     }
     
     cell.accessoryType = UITableViewCellAccessoryDetailButton;
@@ -213,6 +214,8 @@
         cell.textLabel.font = [UIFont systemFontOfSize:16];
         cell.textLabel.textColor = [UIColor grayColor];
     }
+    
+    cell.imageView.image = [UIImage imageWithData:item.thumbnail];
     
     return cell;
 }

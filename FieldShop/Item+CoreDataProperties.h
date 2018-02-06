@@ -1,9 +1,8 @@
 //
 //  Item+CoreDataProperties.h
-//  FieldShop
+//  
 //
-//  Created by dongchx on 18/12/2017.
-//  Copyright © 2017 dongchx. All rights reserved.
+//  Created by dongchx on 05/02/2018.
 //
 //
 
@@ -19,11 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSNumber *collected;
 @property (nullable, nonatomic, copy) NSNumber *listed;
 @property (nullable, nonatomic, copy) NSString *name;
-@property (nullable, nonatomic, retain) NSData *photoData;
 @property (nullable, nonatomic, copy) NSNumber *quantity;
+@property (nullable, nonatomic, retain) NSData *thumbnail;
 @property (nullable, nonatomic, retain) LocationAtHome *locationAtHome;
 @property (nullable, nonatomic, retain) LocationAtShop *locationAtShop;
 @property (nullable, nonatomic, retain) Unit *unit;
+@property (nullable, nonatomic, retain) Item_Photo *photo;
 
 @end
 
