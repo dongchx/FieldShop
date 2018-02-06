@@ -146,7 +146,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    [self.cdh saveContext];
+    [self.cdh backgroundSaveContext];
 }
 
 
@@ -167,7 +167,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    [self.cdh saveContext];
+    [self.cdh backgroundSaveContext];
 }
 
 #pragma mark - coreData

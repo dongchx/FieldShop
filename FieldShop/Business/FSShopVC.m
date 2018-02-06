@@ -12,6 +12,7 @@
 #import "Unit+CoreDataClass.h"
 #import "AppDelegate.h"
 #import "FSItemVC.h"
+#import "FSThumbnailer.h"
 
 @interface FSShopVC ()
 
@@ -35,6 +36,27 @@
                                              selector:@selector(performFetch)
                                                  name:kFSSomethingChangedNotification
                                                object:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    FSDebug;
+    [super viewDidAppear: animated];
+    
+    FSCoreDataHelper *cdh =
+    [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+    
+    NSArray *sortDescriptors = @[
+                                 [NSSortDescriptor sortDescriptorWithKey:@"locationAtHome.storedIn" ascending:YES],
+                                 [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES],
+                                 ];
+    
+    [FSThumbnailer createMissingThumbnailsForEntityName:@"Item"
+                             withThumbnailAttributeName:@"thumbnail"
+                              withPhotoRelationshipName:@"photo"
+                                 withPhotoAttributeName:@"data"
+                                    withSortDescriptors:sortDescriptors
+                                      withImportContext:cdh.importContext];
 }
 
 #pragma mark - subviews
@@ -84,6 +106,10 @@
                          otherButtonTitles:nil];
         [alert show];
     }
+    
+    FSCoreDataHelper *cdh =
+    [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+    [cdh backgroundSaveContext];
 }
 
 #pragma mark - data
@@ -177,6 +203,10 @@
     
     [tableView reloadRowsAtIndexPaths:@[indexPath]
                      withRowAnimation:UITableViewRowAnimationNone];
+    
+    FSCoreDataHelper *cdh =
+    [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+    [cdh backgroundSaveContext];
 }
 
 - (void)                       tableView:(UITableView *)tableView

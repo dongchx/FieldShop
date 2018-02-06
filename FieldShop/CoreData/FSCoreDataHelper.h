@@ -13,6 +13,7 @@
 @interface FSCoreDataHelper : NSObject
 <UIAlertViewDelegate, NSXMLParserDelegate>
 
+@property (nonatomic, readonly) NSManagedObjectContext          *parentContext;
 @property (nonatomic, readonly) NSManagedObjectContext          *context;
 @property (nonatomic, readonly) NSManagedObjectContext          *importContext;
 @property (nonatomic, readonly) NSManagedObjectModel            *model;
@@ -30,5 +31,6 @@
 
 - (void)setupCoreData;
 - (void)saveContext;
+- (void)backgroundSaveContext;
 
 @end

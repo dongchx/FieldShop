@@ -84,7 +84,7 @@ UINavigationControllerDelegate
     [self ensureItemShopLocationIsNotNull];
     FSCoreDataHelper *cdh =
     [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
-    [cdh saveContext];
+    [cdh backgroundSaveContext];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
@@ -119,7 +119,11 @@ UINavigationControllerDelegate
         self.homePickerTF.selectedObjectID = item.locationAtHome.objectID;
         self.shopPickerTF.text = item.locationAtShop.aisle;
         self.shopPickerTF.selectedObjectID = item.locationAtShop.objectID;
-        self.imageView.image = [UIImage imageWithData:item.photo.data];
+        
+        [cdh.context performBlock:^{
+            self.imageView.image = [UIImage imageWithData:item.photo.data];
+        }];
+        
         [self checkCamera];
     }
 }
@@ -642,6 +646,7 @@ didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
                                       inManagedObjectContext:cdh.context];
         item.photo = newPhoto;
     }
+    item.thumbnail = nil;
     item.photo.data = UIImageJPEGRepresentation(photo, 0.5);
     
     self.imageView.image = photo;

@@ -12,6 +12,7 @@
 #import "Unit+CoreDataProperties.h"
 #import "AppDelegate.h"
 #import "FSItemVC.h"
+#import "FSThumbnailer.h"
 
 @interface FSPrepareTVC ()
 
@@ -36,6 +37,27 @@
                                                object:nil];
     
     [self setupSubviews:self.view];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    FSDebug;
+    [super viewDidAppear: animated];
+    
+    FSCoreDataHelper *cdh =
+    [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+    
+    NSArray *sortDescriptors = @[
+    [NSSortDescriptor sortDescriptorWithKey:@"locationAtHome.storedIn" ascending:YES],
+    [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES],
+    ];
+    
+    [FSThumbnailer createMissingThumbnailsForEntityName:@"Item"
+                             withThumbnailAttributeName:@"thumbnail"
+                              withPhotoRelationshipName:@"photo"
+                                 withPhotoAttributeName:@"data"
+                                    withSortDescriptors:sortDescriptors
+                                      withImportContext:cdh.importContext];
 }
 
 #pragma mark - subviews
@@ -118,6 +140,8 @@
         [alert show];
     }
     shoppingList = nil;
+    
+    [cdh backgroundSaveContext];
 }
 
 - (void)    actionSheet:(UIActionSheet *)actionSheet
@@ -149,6 +173,7 @@
     for (Item *item in shoppingList) {
         item.listed = @NO;
     }
+    [cdh backgroundSaveContext];
 }
 
 - (void)add:(id)sender
@@ -240,6 +265,10 @@
         [self.tableView reloadRowsAtIndexPaths:@[indexPath]
                               withRowAnimation:UITableViewRowAnimationFade];
     }
+    
+    FSCoreDataHelper *cdh =
+    [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+    [cdh backgroundSaveContext];
 }
 
 - (void)        tableView:(UITableView *)tableView
@@ -263,6 +292,9 @@
     [tableView reloadRowsAtIndexPaths:@[indexPath]
                      withRowAnimation:UITableViewRowAnimationNone];
     
+    FSCoreDataHelper *cdh =
+    [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+    [cdh backgroundSaveContext];
 }
 
 - (void)                       tableView:(UITableView *)tableView

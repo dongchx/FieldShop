@@ -8,6 +8,7 @@
 
 #import "FSCoreDataHelper.h"
 #import "FSCoreDataImporter.h"
+#import "FSFaulter.h"
 
 #define kFSCDHDefaultDataImportedKey @"DefaultDataImported"
 
@@ -87,26 +88,33 @@ NSString *sourceStoreFilename = @"DefaultData.sqlite";
         _coordinator =
         [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_model];
         
+        _parentContext =
+        [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        [_parentContext performBlockAndWait:^{
+            [_parentContext setPersistentStoreCoordinator:_coordinator];
+            [_parentContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
+        }];
+        
         _context =
         [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-        [_context setPersistentStoreCoordinator:_coordinator];
+        [_context setParentContext:_parentContext];
         [_context setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
         
         _importContext =
         [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
         [_importContext performBlockAndWait:^{
-            [_importContext setPersistentStoreCoordinator:_coordinator];
+            [_importContext setParentContext:_context];
             [_importContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
             [_importContext setUndoManager:nil];
         }];
         
-        _sourceCoordinator =
-        [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_model];
+//        _sourceCoordinator =
+//        [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_model];
         _sourceContext =
         [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
         [_sourceContext performBlockAndWait:^{
             [_sourceContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
-            [_sourceContext setPersistentStoreCoordinator:_sourceCoordinator];
+            [_sourceContext setParentContext:_context];
             [_sourceContext setUndoManager:nil];
         }];
     }
@@ -206,6 +214,29 @@ NSString *sourceStoreFilename = @"DefaultData.sqlite";
     else {
         FSLog(@"There are no changes on _context!");
     }
+}
+
+- (void)backgroundSaveContext
+{
+    FSDebug;
+    
+    [self saveContext];
+    
+    [_parentContext performBlock:^{
+        if ([_parentContext hasChanges]) {
+            NSError *error = nil;
+            if ([_parentContext save:&error]) {
+                FSLog(@"_parentContext SAVED changes to persistent store");
+            }
+            else {
+                FSLog(@"_parentContext FAILED to save: %@", error);
+                [self showValidationError:error];
+            }
+        }
+        else {
+            FSLog(@"_parentContext SKIPPED saving as there are no changes");
+        }
+    }];
 }
 
 #pragma mark - MIGRATION MANAGER
@@ -794,9 +825,10 @@ NSString *sourceStoreFilename = @"DefaultData.sqlite";
                     [item setValue:photo forKey:@"photo"];
                     
                     NSLog(@"Inserting %@", [item valueForKey:@"name"]);
-                    [FSCoreDataImporter saveContext:_importContext];
-                    [_importContext refreshObject:item mergeChanges:NO];
-                    [_importContext refreshObject:photo mergeChanges:NO];
+                    [FSFaulter faultObjectWithID:photo.objectID
+                                       inContext:_importContext];
+                    [FSFaulter faultObjectWithID:item.objectID
+                                       inContext:_importContext];
                 }
             }
             [self somethingChanged];

@@ -42,7 +42,9 @@
     [super viewDidDisappear:animated];
     FSCoreDataHelper *cdh =
     [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
-    [cdh saveContext];
+    [cdh backgroundSaveContext];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kFSSomethingChangedNotification
+                                                        object:nil];
 }
 
 - (void)refreshInterface

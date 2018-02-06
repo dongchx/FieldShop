@@ -22,6 +22,8 @@
 		1826C29D202871F7007BD92D /* Item_Photo+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826C290202871F6007BD92D /* Item_Photo+CoreDataClass.m */; };
 		1826C2B720287F70007BD92D /* DefaultData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 1826C2B620287F70007BD92D /* DefaultData.sqlite */; };
 		1826C2BA202987BA007BD92D /* GroceryHead.png in Resources */ = {isa = PBXBuildFile; fileRef = 1826C2B9202987BA007BD92D /* GroceryHead.png */; };
+		1826C2BD20299F3E007BD92D /* FSFaulter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826C2BC20299F3E007BD92D /* FSFaulter.m */; };
+		1826C2C02029A27E007BD92D /* FSThumbnailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826C2BF2029A27E007BD92D /* FSThumbnailer.m */; };
 		A427647620174C9C00A0AC28 /* FSItemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A427647520174C9C00A0AC28 /* FSItemVC.m */; };
 		A42764792018B29C00A0AC28 /* FSUnitTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A42764782018B29C00A0AC28 /* FSUnitTVC.m */; };
 		A427647C201982D300A0AC28 /* FSUnitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A427647B201982D300A0AC28 /* FSUnitVC.m */; };
@@ -102,6 +104,10 @@
 		1826C291202871F6007BD92D /* Item_Photo+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Item_Photo+CoreDataProperties.h"; path = "/Users/apple/Documents/Development/FieldShop/FieldShop/FieldShop/Item_Photo+CoreDataProperties.h"; sourceTree = "<absolute>"; };
 		1826C2B620287F70007BD92D /* DefaultData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = DefaultData.sqlite; path = DataModel/DefaultData.sqlite; sourceTree = "<group>"; };
 		1826C2B9202987BA007BD92D /* GroceryHead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GroceryHead.png; path = resource/GroceryHead.png; sourceTree = "<group>"; };
+		1826C2BB20299F3E007BD92D /* FSFaulter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FSFaulter.h; path = CoreData/FSFaulter.h; sourceTree = "<group>"; };
+		1826C2BC20299F3E007BD92D /* FSFaulter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FSFaulter.m; path = CoreData/FSFaulter.m; sourceTree = "<group>"; };
+		1826C2BE2029A27E007BD92D /* FSThumbnailer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FSThumbnailer.h; path = CoreData/FSThumbnailer.h; sourceTree = "<group>"; };
+		1826C2BF2029A27E007BD92D /* FSThumbnailer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FSThumbnailer.m; path = CoreData/FSThumbnailer.m; sourceTree = "<group>"; };
 		23EA6505C99D054B43D90681 /* libPods-FieldShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FieldShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F9F2E54D3E5D298A5C732C /* Pods-FieldShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FieldShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-FieldShop/Pods-FieldShop.release.xcconfig"; sourceTree = "<group>"; };
 		A427647420174C9C00A0AC28 /* FSItemVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FSItemVC.h; path = Business/VCs/FSItemVC.h; sourceTree = "<group>"; };
@@ -347,6 +353,10 @@
 				A44499D1201F007E000974C1 /* FSCoreDataPickerTF.m */,
 				A44499EA20205EDF000974C1 /* FSCoreDataImporter.h */,
 				A44499EB20205EDF000974C1 /* FSCoreDataImporter.m */,
+				1826C2BB20299F3E007BD92D /* FSFaulter.h */,
+				1826C2BC20299F3E007BD92D /* FSFaulter.m */,
+				1826C2BE2029A27E007BD92D /* FSThumbnailer.h */,
+				1826C2BF2029A27E007BD92D /* FSThumbnailer.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -618,6 +628,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1826C299202871F7007BD92D /* LocationAtHome+CoreDataClass.m in Sources */,
+				1826C2C02029A27E007BD92D /* FSThumbnailer.m in Sources */,
 				1826C27920287030007BD92D /* Model7toModel8.xcmappingmodel in Sources */,
 				A427648F201A03AE00A0AC28 /* FSLocationAtShopVC.m in Sources */,
 				1826C29C202871F7007BD92D /* Unit+CoreDataProperties.m in Sources */,
@@ -651,6 +662,7 @@
 				A4D6C7F91FD67FD30066251F /* FSCoreDataHelper.m in Sources */,
 				A4D6C7C51FD67C9D0066251F /* AppDelegate.m in Sources */,
 				A4D6C7C21FD67C9D0066251F /* main.m in Sources */,
+				1826C2BD20299F3E007BD92D /* FSFaulter.m in Sources */,
 				A44499E4201F38F0000974C1 /* FSLocationAtHomePickerTF.m in Sources */,
 				A4D6C80A1FD7D06C0066251F /* Model.xcdatamodeld in Sources */,
 				A44499D2201F007E000974C1 /* FSCoreDataPickerTF.m in Sources */,

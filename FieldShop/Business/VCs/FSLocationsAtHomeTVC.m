@@ -114,6 +114,10 @@
         [self.tableView reloadRowsAtIndexPaths:@[indexPath]
                               withRowAnimation:UITableViewRowAnimationFade];
     }
+    
+    FSCoreDataHelper *cdh =
+    [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+    [cdh backgroundSaveContext];
 }
 
 - (void)        tableView:(UITableView *)tableView
