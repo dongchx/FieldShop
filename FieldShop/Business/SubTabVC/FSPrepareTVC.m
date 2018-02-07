@@ -37,6 +37,7 @@
                                                object:nil];
     
     [self setupSubviews:self.view];
+    [self configureSearch];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -219,7 +220,7 @@
     
     cell.accessoryType = UITableViewCellAccessoryDetailButton;
     
-    Item *item = [self.frc objectAtIndexPath:indexPath];
+    Item *item = [[self frcFromTV:tableView] objectAtIndexPath:indexPath];
     NSMutableString *title =
     [NSMutableString stringWithFormat:@"%@%@ %@", item.quantity,item.unit.name,item.name];
     
@@ -260,8 +261,9 @@
     FSDebug;
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        Item *deleteTarget = [self.frc objectAtIndexPath:indexPath];
-        [self.frc.managedObjectContext deleteObject:deleteTarget];
+        NSFetchedResultsController *frc = [self frcFromTV:tableView];
+        Item *deleteTarget = [frc objectAtIndexPath:indexPath];
+        [frc.managedObjectContext deleteObject:deleteTarget];
         [self.tableView reloadRowsAtIndexPaths:@[indexPath]
                               withRowAnimation:UITableViewRowAnimationFade];
     }
@@ -276,9 +278,10 @@
 {
     FSDebug;
     
-    NSManagedObjectID *itemId = [[self.frc objectAtIndexPath:indexPath] objectID];
+    NSFetchedResultsController *frc = [self frcFromTV:tableView];
+    NSManagedObjectID *itemId = [[frc objectAtIndexPath:indexPath] objectID];
     Item *item =
-    (Item *)[self.frc.managedObjectContext existingObjectWithID:itemId
+    (Item *)[frc.managedObjectContext existingObjectWithID:itemId
                                                           error:nil];
     
     if (item.listed.boolValue) {
@@ -301,12 +304,49 @@
 accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     FSDebug;
-    
+    NSFetchedResultsController *frc = [self frcFromTV:tableView];
     FSItemVC *itemVC = [[FSItemVC alloc] init];
-    itemVC.selectedItemID = [[self.frc objectAtIndexPath:indexPath] objectID];
+    itemVC.selectedItemID = [[frc objectAtIndexPath:indexPath] objectID];
     itemVC.hidesBottomBarWhenPushed = YES;
     
     [self.navigationController pushViewController:itemVC animated:YES];
+}
+
+#pragma mark - SEARCH
+
+- (BOOL)    searchDisplayController:(UISearchDisplayController *)controller
+   shouldReloadTableForSearchString:(nullable NSString *)searchString
+{
+    FSDebug;
+    
+    if (searchString.length > 0) {
+        FSLog(@"--> Searching for '%@'", searchString);
+        NSPredicate *predicate =
+        [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", searchString];
+        
+        NSArray *sortDescriptors =
+        @[
+            [NSSortDescriptor sortDescriptorWithKey:@"locationAtHome.storedIn"
+                                          ascending:YES],
+            [NSSortDescriptor sortDescriptorWithKey:@"name"
+                                          ascending:YES],
+          
+          ];
+        
+        FSCoreDataHelper *cdh =
+        [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+        
+        [self reloadSearchFRCForPredicate:predicate
+                               withEntity:@"Item"
+                                inContext:cdh.context
+                      withSortDescriptors:sortDescriptors
+                   withSectionNameKeyPath:@"locationAtHome.storedIn"];
+    }
+    else {
+        return NO;
+    }
+    
+    return YES;
 }
 
 @end
